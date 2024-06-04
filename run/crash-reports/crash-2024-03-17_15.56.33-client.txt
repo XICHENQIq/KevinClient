@@ -1,0 +1,96 @@
+---- Minecraft Crash Report ----
+// My bad.
+
+Time: 3/17/24 3:56 PM
+Description: Updating screen events
+
+kotlin.UninitializedPropertyAccessException: lateinit property keyBindManager has not been initialized
+	at kevin.KevinClient.getKeyBindManager(KevinClient.kt:38)
+	at kevin.hud.keybind.KeyInfo.click(KeyInfo.kt:125)
+	at kevin.hud.keybind.KeyBindManager.mouseClicked(KeyBindManager.kt:108)
+	at net.minecraft.client.gui.GuiScreen.handleMouseInput(GuiScreen.java:647)
+	at net.minecraft.client.gui.GuiScreen.handleInput(GuiScreen.java:616)
+	at net.minecraft.client.Minecraft.runTick(Minecraft.java:1916)
+	at net.minecraft.client.Minecraft.runGameLoop(Minecraft.java:1214)
+	at net.minecraft.client.Minecraft.run(Minecraft.java:484)
+	at net.minecraft.client.main.Main.main(Main.java:115)
+	at Start.main(Start.java:11)
+
+
+A detailed walkthrough of the error, its code path and all known details is as follows:
+---------------------------------------------------------------------------------------
+
+-- Head --
+Thread: Client thread
+Stacktrace:
+	at kevin.KevinClient.getKeyBindManager(KevinClient.kt:38)
+	at kevin.hud.keybind.KeyInfo.click(KeyInfo.kt:125)
+	at kevin.hud.keybind.KeyBindManager.mouseClicked(KeyBindManager.kt:108)
+	at net.minecraft.client.gui.GuiScreen.handleMouseInput(GuiScreen.java:647)
+	at net.minecraft.client.gui.GuiScreen.handleInput(GuiScreen.java:616)
+
+-- Affected screen --
+Details:
+	Screen name: kevin.hud.keybind.KeyBindManager
+
+-- Affected level --
+Details:
+	Level name: MpServer
+	All players: 1 total; [EntityPlayerSP['Player62'/412, l='MpServer', x=294.04, y=113.25, z=-77.10]]
+	Chunk stats: MultiplayerChunkCache: 268, 268
+	Level seed: 0
+	Level generator: ID 00 - default, ver 1. Features enabled: false
+	Level generator options: 
+	Level spawn location: World: (132,64,-168), Chunk: (at 4,4,8 in 8,-11; contains blocks 128,0,-176 to 143,255,-161), Region: (0,-1; contains chunks 0,-32 to 31,-1, blocks 0,0,-512 to 511,255,-1)
+	Level time: 3074 game time, 16174 day time
+	Level dimension: 0
+	Level storage version: 0x00000 - Unknown?
+	Level weather: Rain time: 0 (now: false), thunder time: 0 (now: false)
+	Level game mode: Game mode: creative (ID 1). Hardcore: false. Cheats: false
+	Forced entities: 128 total; [EntityLlama['羊驼'/3079, l='MpServer', x=304.50, y=75.00, z=-51.50], EntityBat['蝙蝠'/5132, l='MpServer', x=325.34, y=32.10, z=-73.43], EntityBat['蝙蝠'/5133, l='MpServer', x=319.97, y=33.00, z=-78.85], EntityBat['蝙蝠'/5134, l='MpServer', x=309.17, y=37.05, z=-83.49], EntityBat['蝙蝠'/5135, l='MpServer', x=320.43, y=33.31, z=-79.27], EntityZombie['僵尸'/3857, l='MpServer', x=284.17, y=60.00, z=-62.70], EntityLlama['羊驼'/284, l='MpServer', x=217.10, y=75.00, z=-56.53], EntityLlama['羊驼'/285, l='MpServer', x=216.67, y=75.00, z=-55.53], EntityLlama['羊驼'/286, l='MpServer', x=217.04, y=77.00, z=-62.55], EntityLlama['羊驼'/289, l='MpServer', x=217.19, y=71.00, z=-41.82], EntityLlama['羊驼'/290, l='MpServer', x=217.63, y=72.00, z=-42.83], EntityBat['蝙蝠'/4904, l='MpServer', x=321.34, y=34.02, z=-88.50], EntityBat['蝙蝠'/4905, l='MpServer', x=335.32, y=32.10, z=-88.25], EntityPig['猪'/3887, l='MpServer', x=352.50, y=76.00, z=-141.50], EntityPig['猪'/3888, l='MpServer', x=352.50, y=76.00, z=-141.50], EntitySkeleton['骷髅'/4674, l='MpServer', x=287.50, y=73.00, z=-129.50], EntityPig['猪'/3652, l='MpServer', x=349.65, y=77.00, z=-144.62], EntitySkeleton['骷髅'/4676, l='MpServer', x=299.50, y=29.00, z=-74.50], EntityPig['猪'/3653, l='MpServer', x=349.50, y=75.00, z=-139.50], EntityWolf['狼'/3654, l='MpServer', x=350.50, y=63.00, z=-48.50], EntityWolf['狼'/3655, l='MpServer', x=349.50, y=64.00, z=-46.50], EntityWolf['狼'/3656, l='MpServer', x=346.50, y=64.00, z=-46.50], EntityChicken['鸡'/328, l='MpServer', x=276.50, y=91.00, z=-83.83], EntityChicken['鸡'/329, l='MpServer', x=267.86, y=83.00, z=-83.43], EntityChicken['鸡'/330, l='MpServer', x=274.50, y=89.00, z=-82.45], EntityCreeper['爬行者'/4685, l='MpServer', x=320.48, y=58.00, z=-149.84], EntitySkeleton['骷髅'/4686, l='MpServer', x=323.50, y=57.00, z=-153.50], EntitySkeleton['骷髅'/4687, l='MpServer', x=320.50, y=57.00, z=-153.50], EntityZombie['僵尸'/4688, l='MpServer', x=324.81, y=59.00, z=-145.50], EntityLlama['羊驼'/337, l='MpServer', x=280.89, y=91.00, z=-83.65], EntityZombie['僵尸'/4689, l='MpServer', x=312.19, y=65.00, z=-103.50], EntityLlama['羊驼'/338, l='MpServer', x=284.44, y=88.00, z=-90.69], EntityLlama['羊驼'/339, l='MpServer', x=290.08, y=83.00, z=-85.16], EntityChicken['鸡'/340, l='MpServer', x=273.46, y=90.00, z=-85.57], EntityLlama['羊驼'/341, l='MpServer', x=289.21, y=84.00, z=-85.66], EntityLlama['羊驼'/342, l='MpServer', x=277.07, y=83.00, z=-6.55], EntityBat['蝙蝠'/4695, l='MpServer', x=327.75, y=32.26, z=-67.44], EntityLlama['羊驼'/343, l='MpServer', x=275.00, y=83.00, z=-3.49], EntityLlama['羊驼'/344, l='MpServer', x=278.04, y=82.00, z=-1.63], EntityBat['蝙蝠'/4697, l='MpServer', x=337.51, y=32.10, z=-91.33], EntityLlama['羊驼'/345, l='MpServer', x=276.40, y=83.00, z=-4.53], EntityBat['蝙蝠'/4699, l='MpServer', x=330.30, y=33.10, z=-95.42], EntityBat['蝙蝠'/4700, l='MpServer', x=331.86, y=30.87, z=-89.39], EntityBat['蝙蝠'/4701, l='MpServer', x=319.38, y=40.27, z=-87.40], EntitySpider['蜘蛛'/5469, l='MpServer', x=320.50, y=73.00, z=-128.50], EntitySkeleton['骷髅'/5217, l='MpServer', x=341.50, y=44.00, z=-60.50], EntitySkeleton['骷髅'/5218, l='MpServer', x=352.23, y=46.00, z=-55.51], EntitySkeleton['骷髅'/5219, l='MpServer', x=337.78, y=42.00, z=-62.50], EntityLlama['羊驼'/2413, l='MpServer', x=290.70, y=83.00, z=-86.20], EntityLlama['羊驼'/2414, l='MpServer', x=301.89, y=76.00, z=-71.44], EntityLlama['羊驼'/2415, l='MpServer', x=297.18, y=79.00, z=-71.95], EntityChicken['鸡'/2416, l='MpServer', x=300.92, y=78.00, z=-72.99], EntitySkeleton['骷髅'/4720, l='MpServer', x=338.50, y=33.00, z=-79.50], EntityChicken['鸡'/2417, l='MpServer', x=300.30, y=79.00, z=-75.06], EntitySkeleton['骷髅'/5745, l='MpServer', x=331.50, y=58.00, z=-155.50], EntityChicken['鸡'/2418, l='MpServer', x=300.48, y=80.00, z=-77.24], EntityZombie['僵尸'/5746, l='MpServer', x=338.50, y=19.00, z=-46.50], EntityLlama['羊驼'/2419, l='MpServer', x=286.90, y=85.00, z=-76.51], EntitySkeleton['骷髅'/5747, l='MpServer', x=339.50, y=38.00, z=-68.18], EntityLlama['羊驼'/2420, l='MpServer', x=298.04, y=80.00, z=-75.50], EntitySkeleton['骷髅'/3700, l='MpServer', x=326.50, y=36.00, z=-79.50], EntityChicken['鸡'/2421, l='MpServer', x=297.32, y=80.00, z=-75.36], EntitySkeleton['骷髅'/3701, l='MpServer', x=325.50, y=36.00, z=-79.50], EntityLlama['羊驼'/2422, l='MpServer', x=298.97, y=80.00, z=-76.84], EntityLlama['羊驼'/2423, l='MpServer', x=303.33, y=78.00, z=-51.59], EntityLlama['羊驼'/2424, l='MpServer', x=300.83, y=79.00, z=-50.63], EntityLlama['羊驼'/2425, l='MpServer', x=302.60, y=72.00, z=-54.14], EntitySkeleton['骷髅'/4217, l='MpServer', x=316.50, y=69.00, z=-105.29], EntityLlama['羊驼'/2426, l='MpServer', x=301.37, y=80.00, z=-48.40], EntitySkeleton['骷髅'/4218, l='MpServer', x=319.50, y=68.00, z=-104.50], EntityWolf['狼'/3194, l='MpServer', x=334.50, y=64.00, z=-77.50], EntityWolf['狼'/3195, l='MpServer', x=331.50, y=67.00, z=-79.50], EntityLlama['羊驼'/2427, l='MpServer', x=296.07, y=78.00, z=-9.63], EntitySkeleton['骷髅'/5755, l='MpServer', x=284.50, y=59.00, z=-70.50], EntityLlama['羊驼'/2428, l='MpServer', x=294.43, y=79.00, z=-12.42], EntitySheep['羊'/3196, l='MpServer', x=332.50, y=77.00, z=-30.50], EntitySheep['羊'/3197, l='MpServer', x=331.50, y=77.00, z=-28.50], EntityBat['蝙蝠'/4989, l='MpServer', x=307.55, y=31.64, z=-150.85], EntityLlama['羊驼'/2429, l='MpServer', x=296.05, y=78.00, z=-11.14], EntitySheep['羊'/3198, l='MpServer', x=329.50, y=77.00, z=-25.50], EntityBat['蝙蝠'/4990, l='MpServer', x=307.75, y=31.87, z=-147.25], EntityLlama['羊驼'/2430, l='MpServer', x=294.26, y=78.00, z=-10.03], EntitySheep['羊'/3199, l='MpServer', x=328.50, y=78.00, z=-25.50], EntityBat['蝙蝠'/4991, l='MpServer', x=305.03, y=31.99, z=-149.58], EntityLlama['羊驼'/2431, l='MpServer', x=292.83, y=79.00, z=-7.47], EntityLlama['羊驼'/3200, l='MpServer', x=330.50, y=76.00, z=-0.50], EntitySkeleton['骷髅'/5255, l='MpServer', x=330.50, y=56.00, z=-42.50], EntityEnderman['末影人'/5256, l='MpServer', x=330.50, y=56.00, z=-42.50], EntityCreeper['爬行者'/4489, l='MpServer', x=324.50, y=20.00, z=-108.50], EntityCreeper['爬行者'/5258, l='MpServer', x=346.50, y=32.00, z=-90.50], EntitySkeleton['骷髅'/5515, l='MpServer', x=271.50, y=32.00, z=-56.50], EntityCreeper['爬行者'/5008, l='MpServer', x=326.50, y=35.00, z=-63.50], EntityCreeper['爬行者'/5009, l='MpServer', x=326.20, y=36.00, z=-58.59], EntityCreeper['爬行者'/5010, l='MpServer', x=326.50, y=35.00, z=-61.50], EntityCreeper['爬行者'/5011, l='MpServer', x=323.60, y=34.00, z=-66.17], EntitySpider['蜘蛛'/5270, l='MpServer', x=341.50, y=54.00, z=-52.50], EntityZombie['僵尸'/4759, l='MpServer', x=317.50, y=75.00, z=-133.50], EntityZombie['僵尸'/5784, l='MpServer', x=309.50, y=41.00, z=-96.50], EntityZombie['僵尸'/3737, l='MpServer', x=323.50, y=31.00, z=-100.50], EntityCreeper['爬行者'/4003, l='MpServer', x=263.50, y=42.00, z=-67.50], EntityCreeper['爬行者'/4004, l='MpServer', x=266.46, y=43.00, z=-71.16], EntityCreeper['爬行者'/4005, l='MpServer', x=262.30, y=42.00, z=-65.16], EntityPlayerSP['Player62'/412, l='MpServer', x=294.04, y=113.25, z=-77.10], EntitySkeleton['骷髅'/5039, l='MpServer', x=285.75, y=60.00, z=-62.60], EntityZombie['僵尸'/4791, l='MpServer', x=292.50, y=37.00, z=-96.50], EntitySkeleton['骷髅'/2232, l='MpServer', x=281.50, y=50.00, z=-90.50], EntityWolf['狼'/2751, l='MpServer', x=331.50, y=68.00, z=-80.50], EntityZombie['僵尸'/5311, l='MpServer', x=347.50, y=34.00, z=-115.50], EntityWolf['狼'/2752, l='MpServer', x=331.50, y=68.00, z=-80.50], EntitySheep['羊'/4033, l='MpServer', x=374.50, y=63.00, z=-19.50], EntitySheep['羊'/4034, l='MpServer', x=370.50, y=63.00, z=-22.50], EntitySheep['羊'/4036, l='MpServer', x=372.50, y=63.00, z=-19.50], EntityCreeper['爬行者'/4551, l='MpServer', x=294.44, y=62.00, z=-112.70], EntityZombie['僵尸'/4552, l='MpServer', x=299.75, y=64.00, z=-120.47], EntityZombie['僵尸'/4553, l='MpServer', x=296.50, y=62.00, z=-112.50], EntitySkeleton['骷髅'/4833, l='MpServer', x=336.50, y=42.00, z=-77.50], EntityWolf['狼'/4074, l='MpServer', x=374.50, y=70.00, z=-96.50], EntityWolf['狼'/4075, l='MpServer', x=374.50, y=70.00, z=-95.50], EntityWolf['狼'/4076, l='MpServer', x=372.50, y=70.00, z=-94.50], EntityWolf['狼'/4077, l='MpServer', x=370.50, y=69.00, z=-95.50], EntityWolf['狼'/4078, l='MpServer', x=367.50, y=76.00, z=-50.50], EntityWolf['狼'/4079, l='MpServer', x=366.28, y=75.00, z=-48.48], EntityWolf['狼'/4080, l='MpServer', x=361.50, y=71.00, z=-53.50], EntityWolf['狼'/4081, l='MpServer', x=362.50, y=72.00, z=-51.50], EntitySquid['鱿鱼'/4593, l='MpServer', x=287.56, y=56.00, z=-64.83], EntityCreeper['爬行者'/4084, l='MpServer', x=295.50, y=47.00, z=-132.50], EntityBat['蝙蝠'/4600, l='MpServer', x=345.25, y=44.58, z=-32.54], EntityBat['蝙蝠'/4346, l='MpServer', x=305.24, y=64.03, z=-102.81]]
+	Retry entities: 0 total; []
+	Server brand: vanilla
+	Server type: Integrated singleplayer server
+Stacktrace:
+	at net.minecraft.client.multiplayer.WorldClient.addWorldInfoToCrashReport(WorldClient.java:523)
+	at net.minecraft.client.Minecraft.addGraphicsAndWorldToCrashReport(Minecraft.java:3054)
+	at net.minecraft.client.Minecraft.run(Minecraft.java:505)
+	at net.minecraft.client.main.Main.main(Main.java:115)
+	at Start.main(Start.java:11)
+
+-- System Details --
+Details:
+	Minecraft Version: 1.12
+	Operating System: Windows 11 (amd64) version 10.0
+	Java Version: 1.8.0_402, Amazon.com Inc.
+	Java VM Version: OpenJDK 64-Bit Server VM (mixed mode), Amazon.com Inc.
+	Memory: 384239744 bytes (366 MB) / 747634688 bytes (713 MB) up to 3758096384 bytes (3584 MB)
+	JVM Flags: 0 total; 
+	IntCache: cache: 0, tcache: 0, allocated: 12, tallocated: 94
+	Launched Version: kevin
+	LWJGL: 2.9.4
+	OpenGL: NVIDIA GeForce RTX 4060 Laptop GPU/PCIe/SSE2 GL version 4.6.0 NVIDIA 532.10, NVIDIA Corporation
+	GL Caps: Using GL 1.3 multitexturing.
+Using GL 1.3 texture combiners.
+Using framebuffer objects because OpenGL 3.0 is supported and separate blending is supported.
+Shaders are available because OpenGL 2.1 is supported.
+VBOs are available because OpenGL 1.5 is supported.
+
+	Using VBOs: Yes
+	Is Modded: Very likely; Jar signature invalidated
+	Type: Client (map_client.txt)
+	Resource Packs: 
+	Current Language: 简体中文 (中国)
+	Profiler Position: N/A (disabled)
+	CPU: 20x 13th Gen Intel(R) Core(TM) i7-13650HX
+	OptiFine Version: OptiFine_1.12_HD_U_C4
+	Render Distance Chunks: 8
+	Mipmaps: 4
+	Anisotropic Filtering: 1
+	Antialiasing: 0
+	Multitexture: false
+	Shaders: null
+	OpenGlVersion: 4.6.0 NVIDIA 532.10
+	OpenGlRenderer: NVIDIA GeForce RTX 4060 Laptop GPU/PCIe/SSE2
+	OpenGlVendor: NVIDIA Corporation
+	CpuCount: 20

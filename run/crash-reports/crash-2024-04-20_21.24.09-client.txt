@@ -1,0 +1,100 @@
+---- Minecraft Crash Report ----
+// Who set us up the TNT?
+
+Time: 4/20/24 9:24 PM
+Description: Updating screen events
+
+java.lang.NullPointerException: Updating screen events
+	at kevin.module.modules.world.BedAura.onEnable(BedAura.kt:38)
+	at kevin.module.Module.setState(Module.kt:39)
+	at kevin.module.Module.toggle(Module.kt:63)
+	at kevin.milk.guis.clickgui.MilkClickGui.mouseClicked(MilkClickGui.java:205)
+	at net.minecraft.client.gui.GuiScreen.handleMouseInput(GuiScreen.java:647)
+	at kevin.milk.guis.clickgui.MilkClickGui.handleMouseInput(MilkClickGui.java:56)
+	at net.minecraft.client.gui.GuiScreen.handleInput(GuiScreen.java:616)
+	at net.minecraft.client.Minecraft.runTick(Minecraft.java:1922)
+	at net.minecraft.client.Minecraft.runGameLoop(Minecraft.java:1220)
+	at net.minecraft.client.Minecraft.run(Minecraft.java:485)
+	at net.minecraft.client.main.Main.main(Main.java:115)
+	at Start.main(Start.java:11)
+
+
+A detailed walkthrough of the error, its code path and all known details is as follows:
+---------------------------------------------------------------------------------------
+
+-- Head --
+Thread: Client thread
+Stacktrace:
+	at kevin.module.modules.world.BedAura.onEnable(BedAura.kt:38)
+	at kevin.module.Module.setState(Module.kt:39)
+	at kevin.module.Module.toggle(Module.kt:63)
+	at kevin.milk.guis.clickgui.MilkClickGui.mouseClicked(MilkClickGui.java:205)
+	at net.minecraft.client.gui.GuiScreen.handleMouseInput(GuiScreen.java:647)
+	at kevin.milk.guis.clickgui.MilkClickGui.handleMouseInput(MilkClickGui.java:56)
+	at net.minecraft.client.gui.GuiScreen.handleInput(GuiScreen.java:616)
+
+-- Affected screen --
+Details:
+	Screen name: kevin.milk.guis.clickgui.MilkClickGui
+
+-- Affected level --
+Details:
+	Level name: MpServer
+	All players: 13 total; [EntityPlayerSP['wxyzabkkkymg'/78, l='MpServer', x=1397.35, y=227.68, z=15.06], EntityOtherPlayerMP['氹氹'/70, l='MpServer', x=1388.22, y=226.50, z=22.41], EntityOtherPlayerMP['Afotico'/52, l='MpServer', x=1364.97, y=226.50, z=24.84], EntityOtherPlayerMP['孤毒明月'/74, l='MpServer', x=1381.69, y=227.00, z=16.28], EntityOtherPlayerMP['Kirtis_best_'/59, l='MpServer', x=1396.69, y=226.41, z=26.66], EntityOtherPlayerMP['阿三刚刚'/71, l='MpServer', x=1390.31, y=226.50, z=18.75], EntityOtherPlayerMP['BestGrim_'/63, l='MpServer', x=1382.44, y=226.50, z=21.09], EntityOtherPlayerMP['BestGrim'/65, l='MpServer', x=1388.03, y=226.50, z=21.72], EntityOtherPlayerMP['Cat_adad'/66, l='MpServer', x=1382.00, y=226.50, z=20.91], EntityOtherPlayerMP['Cat_BNH_'/67, l='MpServer', x=1382.81, y=226.50, z=21.25], EntityOtherPlayerMP['思考的乐天包惜弱'/79, l='MpServer', x=1377.00, y=226.50, z=22.00], EntityOtherPlayerMP['多兰主管祈祷'/80, l='MpServer', x=1395.20, y=226.88, z=16.61], EntityOtherPlayerMP['TyeNow的官方'/81, l='MpServer', x=1377.00, y=226.49, z=22.00]]
+	Chunk stats: MultiplayerChunkCache: 441, 441
+	Level seed: 0
+	Level generator: ID 01 - flat, ver 0. Features enabled: false
+	Level generator options: 
+	Level spawn location: World: (-118,95,77), Chunk: (at 10,5,13 in -8,4; contains blocks -128,0,64 to -113,255,79), Region: (-1,0; contains chunks -32,0 to -1,31, blocks -512,0,0 to -1,255,511)
+	Level time: 372 game time, 16174 day time
+	Level dimension: 0
+	Level storage version: 0x00000 - Unknown?
+	Level weather: Rain time: 0 (now: false), thunder time: 0 (now: false)
+	Level game mode: Game mode: adventure (ID 2). Hardcore: false. Cheats: false
+	Forced entities: 44 total; [EntityPlayerSP['wxyzabkkkymg'/78, l='MpServer', x=1397.35, y=227.68, z=15.06], EntityOtherPlayerMP['BestGrim'/65, l='MpServer', x=1388.03, y=226.50, z=21.72], EntityOtherPlayerMP['BestGrim'/65, l='MpServer', x=1388.03, y=226.50, z=21.72], EntityOtherPlayerMP['阿三刚刚'/71, l='MpServer', x=1383.34, y=226.50, z=20.25], EntityOtherPlayerMP['Cat_adad'/66, l='MpServer', x=1382.00, y=226.50, z=20.91], EntityOtherPlayerMP['Afotico'/52, l='MpServer', x=1397.72, y=226.50, z=14.94], EntityOtherPlayerMP['Cat_BNH_'/67, l='MpServer', x=1382.81, y=226.50, z=21.25], EntityOtherPlayerMP['Cat_BNH_'/67, l='MpServer', x=1382.81, y=226.50, z=21.25], EntityOtherPlayerMP['Kirtis_best_'/59, l='MpServer', x=1403.66, y=227.00, z=21.53], EntityOtherPlayerMP['Cat_adad'/66, l='MpServer', x=1382.00, y=226.50, z=20.91], EntityOtherPlayerMP['氹氹'/70, l='MpServer', x=1388.22, y=226.50, z=22.41], EntityOtherPlayerMP['氹氹'/70, l='MpServer', x=1376.38, y=226.50, z=20.63], EntityOtherPlayerMP['阿三刚刚'/71, l='MpServer', x=1390.31, y=226.50, z=18.75], EntityOtherPlayerMP['BestGrim_'/63, l='MpServer', x=1382.44, y=226.50, z=21.09], EntityOtherPlayerMP['背书的相位唐太宗'/73, l='MpServer', x=1394.41, y=228.09, z=26.47], EntityOtherPlayerMP['孤毒明月'/74, l='MpServer', x=1381.69, y=227.00, z=16.28], EntityOtherPlayerMP['孤毒明月'/74, l='MpServer', x=1381.69, y=227.00, z=16.28], EntityOtherPlayerMP['多兰主管祈祷'/64, l='MpServer', x=1349.94, y=222.00, z=24.59], EntityOtherPlayerMP['超级飞侠w'/77, l='MpServer', x=1380.50, y=226.50, z=21.41], EntityOtherPlayerMP['kksfwpw8'/76, l='MpServer', x=1370.96, y=223.93, z=22.54], EntityOtherPlayerMP['xokj53a5ua5u'/75, l='MpServer', x=1382.05, y=226.50, z=18.91], EntityOtherPlayerMP['背书的相位唐太宗'/73, l='MpServer', x=1385.30, y=227.14, z=17.97], EntityOtherPlayerMP['思考的乐天包惜弱'/79, l='MpServer', x=1377.00, y=226.50, z=22.00], EntityOtherPlayerMP['氹氹'/70, l='MpServer', x=1388.22, y=226.50, z=22.41], EntityOtherPlayerMP['多兰主管祈祷'/80, l='MpServer', x=1395.20, y=226.88, z=16.61], EntityOtherPlayerMP['Afotico'/52, l='MpServer', x=1364.97, y=226.50, z=24.84], EntityOtherPlayerMP['TyeNow的官方'/81, l='MpServer', x=1377.00, y=226.49, z=22.00], EntityOtherPlayerMP['孤毒明月'/74, l='MpServer', x=1381.69, y=227.00, z=16.28], EntityOtherPlayerMP['Kirtis_best_'/59, l='MpServer', x=1396.69, y=226.41, z=26.66], EntityOtherPlayerMP['阿三刚刚'/71, l='MpServer', x=1390.31, y=226.50, z=18.75], EntityOtherPlayerMP['BestGrim_'/63, l='MpServer', x=1382.44, y=226.50, z=21.09], EntityOtherPlayerMP['多兰主管祈祷'/64, l='MpServer', x=1348.30, y=222.00, z=22.53], EntityOtherPlayerMP['BestGrim'/65, l='MpServer', x=1388.03, y=226.50, z=21.72], EntityOtherPlayerMP['Cat_adad'/66, l='MpServer', x=1382.00, y=226.50, z=20.91], EntityOtherPlayerMP['Cat_BNH_'/67, l='MpServer', x=1382.81, y=226.50, z=21.25], EntityOtherPlayerMP['思考的乐天包惜弱'/79, l='MpServer', x=1377.00, y=227.00, z=22.00], EntityOtherPlayerMP['思考的乐天包惜弱'/79, l='MpServer', x=1377.00, y=226.50, z=22.00], EntityOtherPlayerMP['多兰主管祈祷'/80, l='MpServer', x=1377.00, y=227.00, z=22.00], EntityOtherPlayerMP['多兰主管祈祷'/80, l='MpServer', x=1395.20, y=226.88, z=16.61], EntityOtherPlayerMP['TyeNow的官方'/81, l='MpServer', x=1377.00, y=227.00, z=22.00], EntityOtherPlayerMP['TyeNow的官方'/81, l='MpServer', x=1377.00, y=226.49, z=22.00], EntityOtherPlayerMP['Afotico'/52, l='MpServer', x=1364.97, y=226.50, z=24.84], EntityOtherPlayerMP['Kirtis_best_'/59, l='MpServer', x=1396.69, y=226.41, z=26.66], EntityOtherPlayerMP['BestGrim_'/63, l='MpServer', x=1382.44, y=226.50, z=21.09]]
+	Retry entities: 0 total; []
+	Server brand: Waterfall <- NachoSpigot
+	Server type: Non-integrated multiplayer server
+Stacktrace:
+	at net.minecraft.client.multiplayer.WorldClient.addWorldInfoToCrashReport(WorldClient.java:523)
+	at net.minecraft.client.Minecraft.addGraphicsAndWorldToCrashReport(Minecraft.java:3060)
+	at net.minecraft.client.Minecraft.run(Minecraft.java:506)
+	at net.minecraft.client.main.Main.main(Main.java:115)
+	at Start.main(Start.java:11)
+
+-- System Details --
+Details:
+	Minecraft Version: 1.12
+	Operating System: Windows 11 (amd64) version 10.0
+	Java Version: 1.8.0_402, Amazon.com Inc.
+	Java VM Version: OpenJDK 64-Bit Server VM (mixed mode), Amazon.com Inc.
+	Memory: 294887704 bytes (281 MB) / 641204224 bytes (611 MB) up to 3758096384 bytes (3584 MB)
+	JVM Flags: 0 total; 
+	IntCache: cache: 0, tcache: 0, allocated: 13, tallocated: 95
+	Launched Version: kevin
+	LWJGL: 2.9.4
+	OpenGL: NVIDIA GeForce RTX 4060 Laptop GPU/PCIe/SSE2 GL version 4.6.0 NVIDIA 532.10, NVIDIA Corporation
+	GL Caps: Using GL 1.3 multitexturing.
+Using GL 1.3 texture combiners.
+Using framebuffer objects because OpenGL 3.0 is supported and separate blending is supported.
+Shaders are available because OpenGL 2.1 is supported.
+VBOs are available because OpenGL 1.5 is supported.
+
+	Using VBOs: Yes
+	Is Modded: Very likely; Jar signature invalidated
+	Type: Client (map_client.txt)
+	Resource Packs: 
+	Current Language: 简体中文 (中国)
+	Profiler Position: N/A (disabled)
+	CPU: 20x 13th Gen Intel(R) Core(TM) i7-13650HX
+	OptiFine Version: OptiFine_1.12_HD_U_C4
+	Render Distance Chunks: 8
+	Mipmaps: 4
+	Anisotropic Filtering: 1
+	Antialiasing: 0
+	Multitexture: false
+	Shaders: null
+	OpenGlVersion: 4.6.0 NVIDIA 532.10
+	OpenGlRenderer: NVIDIA GeForce RTX 4060 Laptop GPU/PCIe/SSE2
+	OpenGlVendor: NVIDIA Corporation
+	CpuCount: 20

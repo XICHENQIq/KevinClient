@@ -1,0 +1,72 @@
+[
+  {
+    "Type": "Armor",
+    "X": 620.0,
+    "Y": 535.0,
+    "Scale": 1.0,
+    "HorizontalFacing": "Middle",
+    "VerticalFacing": "Down"
+  },
+  {
+    "Type": "Effects",
+    "X": 55.0,
+    "Y": 62.0,
+    "Scale": 1.0,
+    "HorizontalFacing": "Left",
+    "VerticalFacing": "Middle"
+  },
+  {
+    "Type": "ClientInfo",
+    "X": 4.0,
+    "Y": 6.0,
+    "Scale": 0.99999994,
+    "HorizontalFacing": "Left",
+    "VerticalFacing": "Up"
+  },
+  {
+    "Type": "TargetHUD",
+    "X": 300.0,
+    "Y": 307.0,
+    "Scale": 0.99999994,
+    "HorizontalFacing": "Left",
+    "VerticalFacing": "Up",
+    "FadeSpeed": 2.8536587,
+    "Mode": "Blur"
+  },
+  {
+    "Type": "Arraylist",
+    "X": -1.0,
+    "Y": 13.0,
+    "Scale": 1.0,
+    "HorizontalFacing": "Right",
+    "VerticalFacing": "Up",
+    "NoRenderModule": true,
+    "R": 255,
+    "G": 255,
+    "B": 255,
+    "Color": "Rainbow",
+    "Tag": false,
+    "Logo": true,
+    "Background": true,
+    "ShadowText": true,
+    "Space": 0.0,
+    "TextHeight": 10.268293,
+    "TextY": 0.9756097
+  },
+  {
+    "Type": "InvItem",
+    "X": 4.0,
+    "Y": 42.0,
+    "Scale": 1.0,
+    "HorizontalFacing": "Left",
+    "VerticalFacing": "Up",
+    "TIR": 255,
+    "TIG": 255,
+    "TIB": 255,
+    "TitleRainbow": false,
+    "IER": 0,
+    "IEG": 0,
+    "IEB": 0,
+    "InvEmptyStringRainbow": true
+  }
+]

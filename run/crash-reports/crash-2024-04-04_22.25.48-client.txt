@@ -1,0 +1,104 @@
+---- Minecraft Crash Report ----
+// Uh... Did I do that?
+
+Time: 4/4/24 10:25 PM
+Description: Updating screen events
+
+java.lang.ArrayIndexOutOfBoundsException: -1
+	at org.lwjgl.input.Keyboard.getKeyName(Keyboard.java:429)
+	at kevin.command.commands.BindsCommand.exec(BindsCommand.kt:18)
+	at kevin.command.CommandManager.execCommand(CommandManager.kt:40)
+	at net.minecraft.client.entity.EntityPlayerSP.sendChatMessage(EntityPlayerSP.java:398)
+	at net.minecraft.client.gui.GuiScreen.sendChatMessage(GuiScreen.java:524)
+	at net.minecraft.client.gui.GuiScreen.sendChatMessage(GuiScreen.java:514)
+	at net.minecraft.client.gui.GuiChat.keyTyped(GuiChat.java:131)
+	at net.minecraft.client.gui.GuiScreen.handleKeyboardInput(GuiScreen.java:675)
+	at net.minecraft.client.gui.GuiScreen.handleInput(GuiScreen.java:624)
+	at net.minecraft.client.Minecraft.runTick(Minecraft.java:1922)
+	at net.minecraft.client.Minecraft.runGameLoop(Minecraft.java:1220)
+	at net.minecraft.client.Minecraft.run(Minecraft.java:485)
+	at net.minecraft.client.main.Main.main(Main.java:115)
+	at Start.main(Start.java:11)
+
+
+A detailed walkthrough of the error, its code path and all known details is as follows:
+---------------------------------------------------------------------------------------
+
+-- Head --
+Thread: Client thread
+Stacktrace:
+	at org.lwjgl.input.Keyboard.getKeyName(Keyboard.java:429)
+	at kevin.command.commands.BindsCommand.exec(BindsCommand.kt:18)
+	at kevin.command.CommandManager.execCommand(CommandManager.kt:40)
+	at net.minecraft.client.entity.EntityPlayerSP.sendChatMessage(EntityPlayerSP.java:398)
+	at net.minecraft.client.gui.GuiScreen.sendChatMessage(GuiScreen.java:524)
+	at net.minecraft.client.gui.GuiScreen.sendChatMessage(GuiScreen.java:514)
+	at net.minecraft.client.gui.GuiChat.keyTyped(GuiChat.java:131)
+	at net.minecraft.client.gui.GuiScreen.handleKeyboardInput(GuiScreen.java:675)
+	at net.minecraft.client.gui.GuiScreen.handleInput(GuiScreen.java:624)
+
+-- Affected screen --
+Details:
+	Screen name: net.minecraft.client.gui.GuiChat
+
+-- Affected level --
+Details:
+	Level name: MpServer
+	All players: 1 total; [EntityPlayerSP['Player140'/351, l='MpServer', x=299.60, y=72.00, z=-264.42]]
+	Chunk stats: MultiplayerChunkCache: 289, 289
+	Level seed: 0
+	Level generator: ID 00 - default, ver 1. Features enabled: false
+	Level generator options: 
+	Level spawn location: World: (132,64,-168), Chunk: (at 4,4,8 in 8,-11; contains blocks 128,0,-176 to 143,255,-161), Region: (0,-1; contains chunks 0,-32 to 31,-1, blocks 0,0,-512 to 511,255,-1)
+	Level time: 75 game time, 16174 day time
+	Level dimension: 0
+	Level storage version: 0x00000 - Unknown?
+	Level weather: Rain time: 0 (now: true), thunder time: 0 (now: false)
+	Level game mode: Game mode: creative (ID 1). Hardcore: false. Cheats: false
+	Forced entities: 83 total; [EntityCow['牛'/256, l='MpServer', x=246.55, y=91.92, z=-209.60], EntityZombie['僵尸'/384, l='MpServer', x=351.50, y=28.00, z=-238.50], EntityPig['猪'/257, l='MpServer', x=241.05, y=76.00, z=-201.30], EntityPig['猪'/385, l='MpServer', x=337.25, y=73.00, z=-239.48], EntityCow['牛'/258, l='MpServer', x=247.53, y=87.00, z=-200.62], EntityCow['牛'/259, l='MpServer', x=245.50, y=83.00, z=-205.89], EntityCow['牛'/260, l='MpServer', x=247.46, y=88.00, z=-202.26], EntityPig['猪'/261, l='MpServer', x=243.55, y=80.00, z=-203.50], EntityBat['蝙蝠'/390, l='MpServer', x=362.69, y=21.31, z=-332.29], EntityBat['蝙蝠'/391, l='MpServer', x=363.97, y=41.64, z=-326.87], EntityBat['蝙蝠'/392, l='MpServer', x=364.31, y=42.00, z=-329.89], EntityCreeper['爬行者'/393, l='MpServer', x=355.50, y=74.00, z=-322.50], EntityPig['猪'/394, l='MpServer', x=360.50, y=70.00, z=-303.22], EntityPig['猪'/395, l='MpServer', x=359.27, y=73.00, z=-274.50], EntityZombie['僵尸'/396, l='MpServer', x=358.50, y=72.00, z=-279.50], EntitySkeleton['骷髅'/397, l='MpServer', x=364.70, y=73.00, z=-277.39], EntityPig['猪'/398, l='MpServer', x=359.63, y=74.00, z=-271.39], EntityCreeper['爬行者'/271, l='MpServer', x=261.46, y=71.00, z=-312.15], EntitySpider['蜘蛛'/399, l='MpServer', x=357.99, y=75.00, z=-267.50], EntityZombie['僵尸'/272, l='MpServer', x=268.50, y=72.00, z=-276.50], EntityPig['猪'/400, l='MpServer', x=360.49, y=81.00, z=-246.51], EntityItem['item.item.appleGold'/273, l='MpServer', x=257.44, y=72.00, z=-253.22], EntitySheep['羊'/401, l='MpServer', x=354.72, y=82.00, z=-251.52], EntitySkeleton['骷髅'/274, l='MpServer', x=263.50, y=48.00, z=-226.54], EntitySheep['羊'/402, l='MpServer', x=366.87, y=80.00, z=-244.01], EntitySkeleton['骷髅'/275, l='MpServer', x=268.50, y=45.00, z=-222.50], EntitySheep['羊'/403, l='MpServer', x=364.74, y=80.00, z=-244.51], EntityZombie['僵尸'/404, l='MpServer', x=360.50, y=31.00, z=-236.50], EntityPig['猪'/405, l='MpServer', x=360.60, y=81.00, z=-235.69], EntitySheep['羊'/407, l='MpServer', x=379.55, y=66.00, z=-339.55], EntitySheep['羊'/408, l='MpServer', x=377.55, y=66.00, z=-339.55], EntitySheep['羊'/409, l='MpServer', x=377.45, y=66.00, z=-339.45], EntityCreeper['爬行者'/282, l='MpServer', x=282.36, y=69.00, z=-338.51], EntitySheep['羊'/410, l='MpServer', x=378.55, y=67.00, z=-342.45], EntitySpider['蜘蛛'/283, l='MpServer', x=280.75, y=70.08, z=-344.00], EntityBat['蝙蝠'/411, l='MpServer', x=379.25, y=43.34, z=-297.09], EntityCreeper['爬行者'/284, l='MpServer', x=283.60, y=69.00, z=-340.26], EntityBat['蝙蝠'/412, l='MpServer', x=378.53, y=44.00, z=-298.02], EntityCreeper['爬行者'/285, l='MpServer', x=278.34, y=70.00, z=-322.50], EntityCreeper['爬行者'/286, l='MpServer', x=274.50, y=70.00, z=-334.50], EntitySkeleton['骷髅'/414, l='MpServer', x=376.51, y=73.00, z=-285.24], EntityCreeper['爬行者'/287, l='MpServer', x=283.50, y=73.00, z=-242.50], EntityPig['猪'/415, l='MpServer', x=369.55, y=79.00, z=-249.45], EntitySkeleton['骷髅'/288, l='MpServer', x=280.54, y=73.00, z=-245.24], EntityPig['猪'/416, l='MpServer', x=369.36, y=80.00, z=-251.67], EntitySheep['羊'/417, l='MpServer', x=371.01, y=80.00, z=-247.09], EntityCreeper['爬行者'/418, l='MpServer', x=371.50, y=66.00, z=-203.50], EntitySpider['蜘蛛'/300, l='MpServer', x=300.07, y=70.00, z=-339.01], EntityCow['牛'/301, l='MpServer', x=292.45, y=70.00, z=-322.55], EntityCreeper['爬行者'/302, l='MpServer', x=290.50, y=28.00, z=-313.50], EntitySkeleton['骷髅'/315, l='MpServer', x=310.50, y=70.00, z=-299.50], EntityBat['蝙蝠'/316, l='MpServer', x=321.99, y=24.94, z=-250.48], EntityBat['蝙蝠'/317, l='MpServer', x=320.91, y=23.04, z=-250.68], EntityZombie['僵尸'/318, l='MpServer', x=314.50, y=75.00, z=-240.50], EntityPig['猪'/319, l='MpServer', x=316.54, y=77.00, z=-235.22], EntitySpider['蜘蛛'/320, l='MpServer', x=309.12, y=77.00, z=-235.72], EntityPig['猪'/329, l='MpServer', x=334.52, y=73.00, z=-335.70], EntityPig['猪'/330, l='MpServer', x=320.45, y=69.00, z=-314.55], EntityPig['猪'/331, l='MpServer', x=322.55, y=69.00, z=-314.55], EntityZombie['僵尸'/332, l='MpServer', x=333.36, y=72.00, z=-277.13], EntityBat['蝙蝠'/333, l='MpServer', x=330.83, y=23.04, z=-248.44], EntityPig['猪'/334, l='MpServer', x=322.45, y=71.00, z=-248.45], EntityPig['猪'/335, l='MpServer', x=325.45, y=73.00, z=-225.55], EntityPig['猪'/336, l='MpServer', x=328.55, y=73.00, z=-230.45], EntityPig['猪'/337, l='MpServer', x=331.56, y=74.00, z=-220.89], EntityPlayerSP['Player140'/351, l='MpServer', x=299.60, y=72.00, z=-264.42], EntityZombie['僵尸'/242, l='MpServer', x=239.19, y=69.00, z=-327.50], EntitySkeleton['骷髅'/243, l='MpServer', x=227.61, y=73.00, z=-249.99], EntitySkeleton['骷髅'/244, l='MpServer', x=232.50, y=73.00, z=-247.50], EntityCreeper['爬行者'/245, l='MpServer', x=233.50, y=73.00, z=-240.50], EntityCreeper['爬行者'/246, l='MpServer', x=232.29, y=73.00, z=-243.86], EntityPig['猪'/247, l='MpServer', x=227.38, y=73.00, z=-210.63], EntityPig['猪'/248, l='MpServer', x=236.46, y=75.00, z=-203.64], EntityItem['item.item.spiderEye'/250, l='MpServer', x=243.64, y=70.00, z=-320.01], EntityXPOrb['经验球'/251, l='MpServer', x=246.21, y=70.00, z=-321.64], EntityXPOrb['经验球'/252, l='MpServer', x=243.92, y=70.00, z=-320.34], EntityPig['猪'/380, l='MpServer', x=346.30, y=74.00, z=-336.60], EntityCreeper['爬行者'/253, l='MpServer', x=247.50, y=71.00, z=-304.50], EntityPig['猪'/381, l='MpServer', x=348.84, y=71.00, z=-299.26], EntitySkeleton['骷髅'/254, l='MpServer', x=251.72, y=71.00, z=-265.49], EntityPig['猪'/382, l='MpServer', x=342.60, y=76.00, z=-258.45], EntitySkeleton['骷髅'/255, l='MpServer', x=250.45, y=71.00, z=-259.75], EntityPig['猪'/383, l='MpServer', x=337.55, y=76.00, z=-252.41]]
+	Retry entities: 0 total; []
+	Server brand: vanilla
+	Server type: Integrated singleplayer server
+Stacktrace:
+	at net.minecraft.client.multiplayer.WorldClient.addWorldInfoToCrashReport(WorldClient.java:523)
+	at net.minecraft.client.Minecraft.addGraphicsAndWorldToCrashReport(Minecraft.java:3060)
+	at net.minecraft.client.Minecraft.run(Minecraft.java:506)
+	at net.minecraft.client.main.Main.main(Main.java:115)
+	at Start.main(Start.java:11)
+
+-- System Details --
+Details:
+	Minecraft Version: 1.12
+	Operating System: Windows 11 (amd64) version 10.0
+	Java Version: 1.8.0_402, Amazon.com Inc.
+	Java VM Version: OpenJDK 64-Bit Server VM (mixed mode), Amazon.com Inc.
+	Memory: 485709376 bytes (463 MB) / 731906048 bytes (698 MB) up to 3758096384 bytes (3584 MB)
+	JVM Flags: 0 total; 
+	IntCache: cache: 0, tcache: 0, allocated: 13, tallocated: 95
+	Launched Version: kevin
+	LWJGL: 2.9.4
+	OpenGL: NVIDIA GeForce RTX 4060 Laptop GPU/PCIe/SSE2 GL version 4.6.0 NVIDIA 532.10, NVIDIA Corporation
+	GL Caps: Using GL 1.3 multitexturing.
+Using GL 1.3 texture combiners.
+Using framebuffer objects because OpenGL 3.0 is supported and separate blending is supported.
+Shaders are available because OpenGL 2.1 is supported.
+VBOs are available because OpenGL 1.5 is supported.
+
+	Using VBOs: Yes
+	Is Modded: Very likely; Jar signature invalidated
+	Type: Client (map_client.txt)
+	Resource Packs: 
+	Current Language: 简体中文 (中国)
+	Profiler Position: N/A (disabled)
+	CPU: 20x 13th Gen Intel(R) Core(TM) i7-13650HX
+	OptiFine Version: OptiFine_1.12_HD_U_C4
+	Render Distance Chunks: 8
+	Mipmaps: 4
+	Anisotropic Filtering: 1
+	Antialiasing: 0
+	Multitexture: false
+	Shaders: null
+	OpenGlVersion: 4.6.0 NVIDIA 532.10
+	OpenGlRenderer: NVIDIA GeForce RTX 4060 Laptop GPU/PCIe/SSE2
+	OpenGlVendor: NVIDIA Corporation
+	CpuCount: 20

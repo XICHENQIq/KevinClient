@@ -1,0 +1,88 @@
+---- Minecraft Crash Report ----
+// Surprise! Haha. Well, this is awkward.
+
+Time: 4/4/24 1:46 PM
+Description: Unexpected error
+
+java.util.ConcurrentModificationException
+	at com.google.common.collect.HashBiMap$Itr.hasNext(HashBiMap.java:401)
+	at net.minecraft.client.audio.SoundManager.updateAllSounds(SoundManager.java:266)
+	at net.minecraft.client.audio.SoundHandler.update(SoundHandler.java:280)
+	at net.minecraft.client.Minecraft.runTick(Minecraft.java:2023)
+	at net.minecraft.client.Minecraft.runGameLoop(Minecraft.java:1220)
+	at net.minecraft.client.Minecraft.run(Minecraft.java:485)
+	at net.minecraft.client.main.Main.main(Main.java:115)
+	at Start.main(Start.java:11)
+
+
+A detailed walkthrough of the error, its code path and all known details is as follows:
+---------------------------------------------------------------------------------------
+
+-- Head --
+Thread: Client thread
+Stacktrace:
+	at com.google.common.collect.HashBiMap$Itr.hasNext(HashBiMap.java:401)
+	at net.minecraft.client.audio.SoundManager.updateAllSounds(SoundManager.java:266)
+	at net.minecraft.client.audio.SoundHandler.update(SoundHandler.java:280)
+
+-- Affected level --
+Details:
+	Level name: MpServer
+	All players: 1 total; [EntityPlayerSP['Player265'/380, l='MpServer', x=1247.16, y=68.00, z=-261.12]]
+	Chunk stats: MultiplayerChunkCache: 234, 234
+	Level seed: 0
+	Level generator: ID 00 - default, ver 1. Features enabled: false
+	Level generator options: 
+	Level spawn location: World: (132,64,-168), Chunk: (at 4,4,8 in 8,-11; contains blocks 128,0,-176 to 143,255,-161), Region: (0,-1; contains chunks 0,-32 to 31,-1, blocks 0,0,-512 to 511,255,-1)
+	Level time: 2466 game time, 16173 day time
+	Level dimension: 0
+	Level storage version: 0x00000 - Unknown?
+	Level weather: Rain time: 0 (now: false), thunder time: 0 (now: false)
+	Level game mode: Game mode: creative (ID 1). Hardcore: false. Cheats: false
+	Forced entities: 122 total; [EntitySpider['蜘蛛'/3074, l='MpServer', x=1297.50, y=49.00, z=-263.50], EntityPig['猪'/259, l='MpServer', x=201.64, y=71.00, z=-251.45], EntitySpider['蜘蛛'/3075, l='MpServer', x=1297.50, y=49.00, z=-261.50], EntityWitch['女巫'/3076, l='MpServer', x=1297.50, y=49.00, z=-265.50], EntityZombie['僵尸'/3077, l='MpServer', x=1295.50, y=49.00, z=-261.50], EntityRabbit['兔子'/2842, l='MpServer', x=1172.50, y=69.00, z=-308.50], EntityRabbit['兔子'/2843, l='MpServer', x=1175.50, y=69.00, z=-310.50], EntityRabbit['兔子'/2844, l='MpServer', x=1172.50, y=69.00, z=-311.50], EntitySkeleton['骷髅'/3363, l='MpServer', x=1268.73, y=37.00, z=-237.47], EntitySkeleton['骷髅'/3364, l='MpServer', x=1271.50, y=35.00, z=-241.30], EntitySkeleton['骷髅'/3365, l='MpServer', x=1271.50, y=35.00, z=-241.88], EntityZombie['僵尸'/3370, l='MpServer', x=1306.50, y=51.00, z=-221.50], EntityZombie['僵尸'/3371, l='MpServer', x=1307.50, y=51.00, z=-218.50], EntityZombie['僵尸'/3372, l='MpServer', x=1304.50, y=51.00, z=-222.50], EntityRabbit['兔子'/2609, l='MpServer', x=1267.64, y=65.00, z=-270.49], EntityRabbit['兔子'/2610, l='MpServer', x=1269.57, y=67.00, z=-262.89], EntityRabbit['兔子'/2611, l='MpServer', x=1272.76, y=64.07, z=-268.15], EntityItem['item.tile.mushroom'/2614, l='MpServer', x=1234.88, y=54.00, z=-292.53], EntityItem['item.tile.mushroom'/2615, l='MpServer', x=1232.86, y=54.00, z=-290.88], EntityItem['item.tile.mushroom'/2616, l='MpServer', x=1230.32, y=54.00, z=-290.84], EntitySkeleton['骷髅'/2873, l='MpServer', x=1298.50, y=41.00, z=-273.50], EntityCreeper['爬行者'/2618, l='MpServer', x=1297.50, y=37.00, z=-272.50], EntitySkeleton['骷髅'/3130, l='MpServer', x=1303.50, y=43.00, z=-281.50], EntityChicken['鸡'/2624, l='MpServer', x=1314.50, y=64.00, z=-266.50], EntityChicken['鸡'/2625, l='MpServer', x=1316.50, y=64.00, z=-266.50], EntityCreeper['爬行者'/3137, l='MpServer', x=1295.75, y=14.92, z=-231.70], EntityChicken['鸡'/2626, l='MpServer', x=1314.50, y=64.00, z=-269.50], EntitySkeleton['骷髅'/3138, l='MpServer', x=1299.50, y=13.00, z=-231.50], EntityItem['item.item.appleGold'/3394, l='MpServer', x=1255.31, y=66.00, z=-257.31], EntityChicken['鸡'/2627, l='MpServer', x=1318.50, y=64.00, z=-265.50], EntityZombie['僵尸'/3139, l='MpServer', x=1320.50, y=20.00, z=-221.50], EntityZombie['僵尸'/3140, l='MpServer', x=1315.30, y=18.16, z=-218.58], EntityItem['item.item.appleGold'/3396, l='MpServer', x=1248.83, y=68.00, z=-257.97], EntityChicken['鸡'/2629, l='MpServer', x=1267.50, y=63.00, z=-193.50], EntityZombieVillager['僵尸村民'/3141, l='MpServer', x=1282.34, y=31.00, z=-186.13], EntityChicken['鸡'/2630, l='MpServer', x=1267.50, y=63.00, z=-196.50], EntityZombie['僵尸'/3142, l='MpServer', x=1283.50, y=30.00, z=-185.50], EntityChicken['鸡'/2631, l='MpServer', x=1263.50, y=63.00, z=-196.50], EntityZombie['僵尸'/3143, l='MpServer', x=1281.65, y=30.00, z=-181.62], EntityChicken['鸡'/2632, l='MpServer', x=1262.50, y=63.00, z=-193.50], EntityCreeper['爬行者'/3144, l='MpServer', x=1281.50, y=30.00, z=-183.50], EntityPig['猪'/2633, l='MpServer', x=1263.50, y=63.00, z=-188.50], EntityPig['猪'/2634, l='MpServer', x=1266.50, y=64.00, z=-188.50], EntityPig['猪'/2635, l='MpServer', x=1265.50, y=64.00, z=-189.50], EntityPig['猪'/2636, l='MpServer', x=1267.50, y=64.00, z=-189.50], EntityItem['item.tile.mushroom'/2638, l='MpServer', x=1304.88, y=12.00, z=-229.88], EntityChicken['鸡'/2643, l='MpServer', x=1318.50, y=64.00, z=-286.50], EntityChicken['鸡'/2644, l='MpServer', x=1318.50, y=64.00, z=-290.50], EntityChicken['鸡'/2645, l='MpServer', x=1318.50, y=64.00, z=-288.50], EntityChicken['鸡'/2646, l='MpServer', x=1315.50, y=64.00, z=-286.50], EntityBat['蝙蝠'/2903, l='MpServer', x=1289.48, y=35.70, z=-271.44], EntityBat['蝙蝠'/2904, l='MpServer', x=1289.48, y=36.84, z=-263.50], EntityBat['蝙蝠'/2650, l='MpServer', x=1288.16, y=47.03, z=-239.87], EntityCreeper['爬行者'/3420, l='MpServer', x=1305.50, y=15.00, z=-246.50], EntityBat['蝙蝠'/2654, l='MpServer', x=1251.16, y=36.45, z=-269.78], EntitySpider['蜘蛛'/2914, l='MpServer', x=1309.50, y=14.00, z=-235.50], EntityRabbit['兔子'/2659, l='MpServer', x=1228.50, y=68.00, z=-186.50], EntityRabbit['兔子'/2660, l='MpServer', x=1228.50, y=68.00, z=-185.50], EntityRabbit['兔子'/2661, l='MpServer', x=1222.45, y=69.20, z=-190.45], EntityRabbit['兔子'/2662, l='MpServer', x=1283.50, y=66.00, z=-314.50], EntitySpider['蜘蛛'/3174, l='MpServer', x=1305.50, y=15.00, z=-245.50], EntityRabbit['兔子'/2663, l='MpServer', x=1280.50, y=66.00, z=-314.50], EntityZombie['僵尸'/2664, l='MpServer', x=1223.50, y=58.00, z=-252.50], EntityRabbit['兔子'/2668, l='MpServer', x=1191.50, y=71.00, z=-252.50], EntityRabbit['兔子'/2669, l='MpServer', x=1191.50, y=71.00, z=-251.50], EntityItem['item.item.appleGold'/3437, l='MpServer', x=1246.16, y=68.00, z=-261.58], EntityZombie['僵尸'/2670, l='MpServer', x=1294.50, y=17.00, z=-261.50], EntityZombie['僵尸'/2671, l='MpServer', x=1294.50, y=17.00, z=-266.50], EntitySquid['鱿鱼'/2673, l='MpServer', x=1229.54, y=59.36, z=-225.55], EntitySquid['鱿鱼'/2674, l='MpServer', x=1232.12, y=60.17, z=-221.26], EntitySpider['蜘蛛'/2930, l='MpServer', x=1305.50, y=18.00, z=-262.50], EntitySquid['鱿鱼'/2675, l='MpServer', x=1232.41, y=59.00, z=-225.54], EntityZombie['僵尸'/2931, l='MpServer', x=1305.50, y=18.00, z=-261.50], EntitySquid['鱿鱼'/2676, l='MpServer', x=1226.16, y=59.91, z=-217.70], EntityChicken['鸡'/2683, l='MpServer', x=1326.50, y=65.00, z=-227.50], EntityChicken['鸡'/2685, l='MpServer', x=1325.50, y=64.00, z=-224.50], EntityChicken['鸡'/2686, l='MpServer', x=1324.50, y=64.00, z=-224.50], EntityRabbit['兔子'/2687, l='MpServer', x=1198.50, y=67.00, z=-306.50], EntityRabbit['兔子'/2688, l='MpServer', x=1194.50, y=68.00, z=-304.50], EntitySpider['蜘蛛'/2689, l='MpServer', x=1292.30, y=37.10, z=-274.30], EntityRabbit['兔子'/2696, l='MpServer', x=1220.50, y=71.00, z=-319.50], EntityRabbit['兔子'/2697, l='MpServer', x=1222.50, y=70.00, z=-322.50], EntityChicken['鸡'/2698, l='MpServer', x=1278.50, y=64.00, z=-182.50], EntityChicken['鸡'/2699, l='MpServer', x=1280.50, y=64.00, z=-182.50], EntityCreeper['爬行者'/2955, l='MpServer', x=1307.35, y=13.00, z=-225.93], EntityCreeper['爬行者'/2956, l='MpServer', x=1301.50, y=12.00, z=-224.50], EntitySkeleton['骷髅'/2957, l='MpServer', x=1306.50, y=46.00, z=-290.50], EntitySkeleton['骷髅'/2958, l='MpServer', x=1309.46, y=46.00, z=-293.24], EntityRabbit['兔子'/2703, l='MpServer', x=1264.87, y=65.00, z=-335.83], EntityRabbit['兔子'/2704, l='MpServer', x=1265.50, y=64.00, z=-340.50], EntityZombie['僵尸'/2705, l='MpServer', x=1317.50, y=28.00, z=-242.50], EntityBat['蝙蝠'/2706, l='MpServer', x=1211.55, y=59.12, z=-233.24], EntityCreeper['爬行者'/2967, l='MpServer', x=1306.50, y=19.00, z=-190.50], EntityCreeper['爬行者'/2968, l='MpServer', x=1309.50, y=19.00, z=-193.50], EntityRabbit['兔子'/2713, l='MpServer', x=1249.50, y=67.00, z=-338.50], EntityBat['蝙蝠'/2718, l='MpServer', x=1273.21, y=43.56, z=-201.35], EntityZombie['僵尸'/3230, l='MpServer', x=1317.50, y=14.00, z=-208.50], EntityBat['蝙蝠'/2975, l='MpServer', x=1292.36, y=35.58, z=-327.54], EntityZombie['僵尸'/3232, l='MpServer', x=1314.50, y=14.00, z=-206.50], EntitySkeleton['骷髅'/3233, l='MpServer', x=1316.50, y=14.00, z=-209.50], EntitySkeleton['骷髅'/3234, l='MpServer', x=1317.50, y=14.00, z=-209.50], EntitySkeleton['骷髅'/2989, l='MpServer', x=1322.75, y=51.00, z=-256.48], EntityBat['蝙蝠'/2736, l='MpServer', x=1309.75, y=52.03, z=-213.30], EntityBat['蝙蝠'/2737, l='MpServer', x=1306.06, y=15.00, z=-247.60], EntityBat['蝙蝠'/2738, l='MpServer', x=1304.50, y=17.09, z=-260.75], EntityBat['蝙蝠'/2739, l='MpServer', x=1305.40, y=16.00, z=-257.49], EntitySkeleton['骷髅'/3256, l='MpServer', x=1282.51, y=30.00, z=-183.33], EntityRabbit['兔子'/2746, l='MpServer', x=1169.50, y=74.00, z=-256.50], EntityZombie['僵尸'/2749, l='MpServer', x=1263.50, y=25.00, z=-294.50], EntityZombie['僵尸'/2750, l='MpServer', x=1262.50, y=25.00, z=-297.50], EntityZombie['僵尸'/2751, l='MpServer', x=1264.50, y=25.00, z=-295.50], EntityPlayerSP['Player265'/380, l='MpServer', x=1247.16, y=68.00, z=-261.12], EntitySkeleton['骷髅'/3014, l='MpServer', x=1292.50, y=31.00, z=-263.50], EntityRabbit['兔子'/2770, l='MpServer', x=1168.50, y=71.00, z=-273.50], EntityRabbit['兔子'/2771, l='MpServer', x=1290.50, y=64.20, z=-338.63], EntityCreeper['爬行者'/2777, l='MpServer', x=1313.50, y=38.00, z=-255.50], EntityCreeper['爬行者'/3291, l='MpServer', x=1287.50, y=46.00, z=-254.50], EntityCreeper['爬行者'/2804, l='MpServer', x=1298.50, y=43.00, z=-279.50], EntityCreeper['爬行者'/3317, l='MpServer', x=1240.50, y=60.00, z=-269.50], EntityRabbit['兔子'/2808, l='MpServer', x=1205.26, y=69.31, z=-186.25], EntitySheep['羊'/2812, l='MpServer', x=1324.50, y=64.00, z=-317.50], EntitySheep['羊'/2814, l='MpServer', x=1323.50, y=64.00, z=-313.50]]
+	Retry entities: 57 total; [EntityPig['猪'/259, l='MpServer', x=201.64, y=71.00, z=-251.45], EntityPig['猪'/260, l='MpServer', x=199.76, y=74.00, z=-229.50], EntitySkeleton['骷髅'/1925, l='MpServer', x=174.50, y=40.00, z=-325.50], EntitySkeleton['骷髅'/1926, l='MpServer', x=174.78, y=40.00, z=-326.50], EntitySpider['蜘蛛'/268, l='MpServer', x=227.97, y=70.00, z=-282.97], EntityPig['猪'/276, l='MpServer', x=227.38, y=73.00, z=-210.63], EntityPig['猪'/277, l='MpServer', x=236.46, y=75.00, z=-203.64], EntityZombie['僵尸'/2454, l='MpServer', x=206.50, y=38.00, z=-184.50], EntitySkeleton['骷髅'/2585, l='MpServer', x=178.50, y=47.00, z=-285.50], EntityZombie['僵尸'/2587, l='MpServer', x=270.50, y=43.00, z=-201.50], EntityCreeper['爬行者'/2588, l='MpServer', x=270.50, y=43.00, z=-202.50], EntityCow['牛'/286, l='MpServer', x=247.44, y=93.00, z=-210.19], EntityPig['猪'/287, l='MpServer', x=241.05, y=76.00, z=-201.30], EntityBat['蝙蝠'/1312, l='MpServer', x=236.15, y=28.50, z=-229.31], EntityCow['牛'/288, l='MpServer', x=247.53, y=87.00, z=-200.62], EntityBat['蝙蝠'/1313, l='MpServer', x=215.91, y=28.23, z=-226.72], EntityCow['牛'/289, l='MpServer', x=245.56, y=85.00, z=-203.52], EntityBat['蝙蝠'/1314, l='MpServer', x=227.31, y=30.43, z=-230.04], EntityCow['牛'/290, l='MpServer', x=247.48, y=88.00, z=-204.51], EntityPig['猪'/291, l='MpServer', x=243.25, y=80.00, z=-203.50], EntityZombie['僵尸'/2083, l='MpServer', x=306.50, y=24.00, z=-251.50], EntityZombie['僵尸'/2084, l='MpServer', x=308.50, y=24.00, z=-249.50], EntityZombie['僵尸'/2346, l='MpServer', x=190.50, y=47.00, z=-317.50], EntitySkeleton['骷髅'/810, l='MpServer', x=278.50, y=79.00, z=-188.50], EntityItem['item.item.appleGold'/2605, l='MpServer', x=255.78, y=74.34, z=-254.32], EntityCreeper['爬行者'/304, l='MpServer', x=271.20, y=72.00, z=-286.31], EntityPig['猪'/305, l='MpServer', x=261.28, y=100.00, z=-178.57], EntitySkeleton['骷髅'/2354, l='MpServer', x=207.50, y=28.00, z=-223.50], EntitySkeleton['骷髅'/2355, l='MpServer', x=207.50, y=28.00, z=-224.50], EntityCreeper['爬行者'/1972, l='MpServer', x=218.50, y=14.00, z=-312.50], EntitySkeleton['骷髅'/1973, l='MpServer', x=222.50, y=14.00, z=-308.50], EntitySpider['蜘蛛'/313, l='MpServer', x=283.06, y=74.00, z=-297.53], EntityWitch['女巫'/2493, l='MpServer', x=286.50, y=22.00, z=-194.50], EntityZombie['僵尸'/1603, l='MpServer', x=186.50, y=40.00, z=-286.50], EntityCow['牛'/328, l='MpServer', x=292.45, y=70.00, z=-322.55], EntityItem['item.item.bone'/2379, l='MpServer', x=240.22, y=70.00, z=-267.34], EntitySkeleton['骷髅'/2124, l='MpServer', x=325.50, y=37.00, z=-319.50], EntityItem['item.item.seeds'/2383, l='MpServer', x=241.37, y=70.00, z=-266.13], EntityCreeper['爬行者'/2513, l='MpServer', x=211.50, y=33.00, z=-180.50], EntityBat['蝙蝠'/849, l='MpServer', x=274.20, y=52.07, z=-177.80], EntityCreeper['爬行者'/2514, l='MpServer', x=211.50, y=33.00, z=-180.50], EntityZombie['僵尸'/2515, l='MpServer', x=211.50, y=33.00, z=-181.50], EntityCreeper['爬行者'/1884, l='MpServer', x=328.50, y=40.00, z=-332.50], EntityItem['item.item.rottenFlesh'/1894, l='MpServer', x=204.06, y=69.00, z=-276.32], EntityItem['item.item.sulphur'/2406, l='MpServer', x=241.76, y=70.00, z=-266.13], EntitySkeleton['骷髅'/2536, l='MpServer', x=296.50, y=36.00, z=-328.50], EntityPig['猪'/362, l='MpServer', x=320.55, y=69.00, z=-314.55], EntityPig['猪'/363, l='MpServer', x=322.55, y=69.00, z=-314.55], EntityPig['猪'/365, l='MpServer', x=322.45, y=71.00, z=-248.45], EntityPig['猪'/367, l='MpServer', x=325.45, y=73.00, z=-225.55], EntityPig['猪'/368, l='MpServer', x=317.50, y=77.00, z=-234.22], EntityPig['猪'/369, l='MpServer', x=328.55, y=73.00, z=-230.45], EntityPig['猪'/370, l='MpServer', x=333.57, y=74.00, z=-224.07], EntityZombie['僵尸'/2420, l='MpServer', x=303.50, y=17.00, z=-328.50], EntityPig['猪'/246, l='MpServer', x=179.50, y=72.00, z=-200.25], EntitySkeleton['骷髅'/2169, l='MpServer', x=265.50, y=37.00, z=-184.50], EntityBat['蝙蝠'/1663, l='MpServer', x=264.59, y=38.99, z=-187.75]]
+	Server brand: vanilla
+	Server type: Integrated singleplayer server
+Stacktrace:
+	at net.minecraft.client.multiplayer.WorldClient.addWorldInfoToCrashReport(WorldClient.java:523)
+	at net.minecraft.client.Minecraft.addGraphicsAndWorldToCrashReport(Minecraft.java:3060)
+	at net.minecraft.client.Minecraft.run(Minecraft.java:514)
+	at net.minecraft.client.main.Main.main(Main.java:115)
+	at Start.main(Start.java:11)
+
+-- System Details --
+Details:
+	Minecraft Version: 1.12
+	Operating System: Windows 11 (amd64) version 10.0
+	Java Version: 1.8.0_402, Amazon.com Inc.
+	Java VM Version: OpenJDK 64-Bit Server VM (mixed mode), Amazon.com Inc.
+	Memory: 109137688 bytes (104 MB) / 853016576 bytes (813 MB) up to 3758096384 bytes (3584 MB)
+	JVM Flags: 0 total; 
+	IntCache: cache: 0, tcache: 0, allocated: 13, tallocated: 95
+	Launched Version: kevin
+	LWJGL: 2.9.4
+	OpenGL: NVIDIA GeForce RTX 4060 Laptop GPU/PCIe/SSE2 GL version 4.6.0 NVIDIA 532.10, NVIDIA Corporation
+	GL Caps: Using GL 1.3 multitexturing.
+Using GL 1.3 texture combiners.
+Using framebuffer objects because OpenGL 3.0 is supported and separate blending is supported.
+Shaders are available because OpenGL 2.1 is supported.
+VBOs are available because OpenGL 1.5 is supported.
+
+	Using VBOs: Yes
+	Is Modded: Very likely; Jar signature invalidated
+	Type: Client (map_client.txt)
+	Resource Packs: 
+	Current Language: 简体中文 (中国)
+	Profiler Position: N/A (disabled)
+	CPU: 20x 13th Gen Intel(R) Core(TM) i7-13650HX
+	OptiFine Version: OptiFine_1.12_HD_U_C4
+	Render Distance Chunks: 8
+	Mipmaps: 4
+	Anisotropic Filtering: 1
+	Antialiasing: 0
+	Multitexture: false
+	Shaders: null
+	OpenGlVersion: 4.6.0 NVIDIA 532.10
+	OpenGlRenderer: NVIDIA GeForce RTX 4060 Laptop GPU/PCIe/SSE2
+	OpenGlVendor: NVIDIA Corporation
+	CpuCount: 20
