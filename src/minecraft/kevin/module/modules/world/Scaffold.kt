@@ -479,8 +479,6 @@ class Scaffold : Module("Scaffold", "Automatically places blocks beneath your fe
             setRotation(lockRotation!!)
             lockRotationTimer.update()
         }
-        lockRotation?.applyStrafeToPlayer(event)
-        event.cancelEvent()
     }
 
     @EventTarget

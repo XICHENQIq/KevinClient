@@ -206,100 +206,10 @@ class KillAura : Module("KillAura","Automatically attacks targets around you.", 
     }
 
     @EventTarget
-    fun onMoveInputEvent(event: MoveInputEvent) {
-        if (rotationStrafeValue.get() == "Strict") {
-            if (currentTarget != null && RotationUtils.targetRotation != null) {
-
-                val forward: Float = event.forward
-                val strafe: Float = event.strafe
-
-                val angle: Double = MathHelper.wrapDegrees(
-                    Math.toDegrees(
-                        direction(
-                            mc.player.rotationYaw, forward.toDouble(), strafe.toDouble()
-                        )
-                    )
-                )
-
-                if (forward == 0f && strafe == 0f) {
-                    return
-                }
-
-                var closestForward = 0f
-                var closestStrafe = 0f
-                var closestDifference: Float = Float.MAX_VALUE
-
-
-                var predictedForward = -1f
-                while (predictedForward <= 1f) {
-                    var predictedStrafe = -1f
-                    while (predictedStrafe <= 1f) {
-                        if (predictedStrafe == 0f && predictedForward == 0f) {
-                            predictedStrafe += 1f
-                            continue
-                        }
-                        val predictedAngle: Double = MathHelper.wrapDegrees(
-                            Math.toDegrees(
-                                direction(
-                                    RotationUtils.targetRotation.yaw,
-                                    predictedForward.toDouble(),
-                                    predictedStrafe.toDouble()
-                                )
-                            )
-                        )
-                        val difference = Math.abs(angle - predictedAngle)
-                        if (difference < closestDifference) {
-                            closestDifference = difference.toFloat()
-                            closestForward = predictedForward
-                            closestStrafe = predictedStrafe
-                        }
-                        predictedStrafe += 1f
-                    }
-                    predictedForward += 1f
-                }
-
-
-                event.forward = closestForward
-                event.strafe = closestStrafe
-            }
-        }
-    }
-    fun direction(rotationYaw: Float, moveForward: Double, moveStrafing: Double): Double {
-        var rotationYaw = rotationYaw
-        if (moveForward < 0f) rotationYaw += 180f
-        var forward = 1f
-        if (moveForward < 0f) forward = -0.5f else if (moveForward > 0f) forward = 0.5f
-        if (moveStrafing > 0f) rotationYaw -= 90f * forward
-        if (moveStrafing < 0f) rotationYaw += 90f * forward
-        return Math.toRadians(rotationYaw.toDouble())
-    }
-
-    @EventTarget
     fun onJump(event: JumpEvent) {
         if (rotationStrafeValue.get() == "Strict") {
             if (target != null)  {
                 event.cancelEvent()
-            }
-        }
-    }
-    /**
-     * Strafe event
-     */
-    @EventTarget
-    fun onStrafe(event: StrafeEvent) {
-        if (rotationStrafeValue.get().equals("Off", true))
-            return
-
-        update()
-
-        if (currentTarget != null && RotationUtils.targetRotation != null) {
-            when (rotationStrafeValue.get().toLowerCase()) {
-                "silent" -> {
-                    update()
-
-                    RotationUtils.targetRotation.applyStrafeToPlayer(event)
-                    event.cancelEvent()
-                }
             }
         }
     }
@@ -318,31 +228,6 @@ class KillAura : Module("KillAura","Automatically attacks targets around you.", 
 
         if (!targetModeValue.get().equals("Switch", ignoreCase = true) && isEnemy(currentTarget))
             target = currentTarget
-    }
-
-    @EventTarget(ignoreCondition = true)
-    fun onPacket(event: PacketEvent){
-        val packet: Packet<*> = event.packet
-
-        if (packet is CPacketPlayer) {
-            if (RotationUtils.targetRotation != null && !RotationUtils.keepCurrentRotation && (RotationUtils.targetRotation.yaw != RotationUtils.serverRotation.yaw || RotationUtils.targetRotation.pitch != RotationUtils.serverRotation.pitch)) {
-                packet.yaw = RotationUtils.targetRotation.yaw
-                packet.pitch = RotationUtils.targetRotation.pitch
-                packet.rotating = true
-            }
-            if (packet.rotating) RotationUtils.serverRotation = Rotation(packet.yaw, packet.pitch)
-        }
-    }
-
-    @EventTarget(ignoreCondition = true)
-    fun onTick(event: TickEvent?) {
-        if (RotationUtils.targetRotation != null) {
-            RotationUtils.keepLength--
-            if (RotationUtils.keepLength <= 0) RotationUtils.reset()
-        }
-        if (RotationUtils.random.nextGaussian() > 0.8) RotationUtils.x = Math.random()
-        if (RotationUtils.random.nextGaussian() > 0.8) RotationUtils.y = Math.random()
-        if (RotationUtils.random.nextGaussian() > 0.8) RotationUtils.z = Math.random()
     }
 
     /**

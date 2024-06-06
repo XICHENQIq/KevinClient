@@ -388,7 +388,7 @@ object CrystalAura : Module("CrystalAura","Automatically place and/or attacks cr
     private fun lookAtPacket(px: Double, py: Double, pz: Double, me: EntityPlayer) {
         val v = calculateLookAt(px, py, pz, me)
         //setYawAndPitch(v[0].toFloat(), v[1].toFloat())
-        RotationUtils.setTargetRotation(Rotation(v[0].toFloat(), v[1].toFloat()))
+        RotationUtils.setTargetRotation(Rotation(v[0].toFloat(), v[1].toFloat()),0)
     }
 
     fun canPlaceCrystal(blockPos: BlockPos): Boolean {

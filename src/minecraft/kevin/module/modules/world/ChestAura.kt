@@ -54,7 +54,7 @@ class ChestAura : Module(name = "ChestAura", description = "自动打开你周�
             if (block.value is BlockChest && !clickedBlocks.contains(block.key) && BlockUtils.getCenterDistance(block.key) <= range.get() && !BlockUtils.getBlock(BlockPos(block.key.x,block.key.y + 1,block.key.z))!!.isFullBlock(mc.world.getBlockState(BlockPos(block.key.x,block.key.y + 1,block.key.z)))){
                 Sprint.canSprint = false
                 Sprint.sprintTick = 0
-                RotationUtils.setTargetRotation((RotationUtils.faceBlock(block.key) ?: return).rotation)
+                RotationUtils.setTargetRotation((RotationUtils.faceBlock(block.key) ?: return).rotation,0)
                 mc.connection!!.networkManager.sendPacket(CPacketPlayerTryUseItemOnBlock(block.key,EnumFacing.UP,EnumHand.MAIN_HAND,0f,0f,0f))
                 mc.player.swingArm(EnumHand.MAIN_HAND)
                 clickedBlocks.add(block.key)
@@ -62,17 +62,6 @@ class ChestAura : Module(name = "ChestAura", description = "自动打开你周�
                 return
             }
         }
-    }
-
-    @EventTarget
-    fun onStrafe(event: StrafeEvent) {
-
-        if (RotationUtils.targetRotation != null && !event.isCancelled) {
-            RotationUtils.targetRotation.applyStrafeToPlayer(event)
-            event.cancelEvent()
-            return
-        }
-
     }
 
     override fun onDisable() {

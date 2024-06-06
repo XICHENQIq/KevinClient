@@ -216,7 +216,7 @@ class AntiKnockback : Module("AntiKnockback","Allows you to modify the amount of
                         if (mc.player.inventory.currentItem != slot) {
                             PacketUtils.sendPacketNoEvent(CPacketHeldItemChange(slot))
                         }
-                        RotationUtils.setTargetRotation(Rotation(mc.player.rotationYaw,90f))
+                        RotationUtils.setTargetRotation(Rotation(mc.player.rotationYaw,90f),0)
 
                         PacketUtils.sendPacketNoEvent(CPacketHeldItemChange((slot + 1) % 9))
                         PacketUtils.sendPacketNoEvent(CPacketConfirmTransaction(0,0,true))

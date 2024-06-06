@@ -1,9 +1,7 @@
 package kevin.utils;
 
 import kevin.KevinClient;
-import kevin.event.EventTarget;
-import kevin.event.Listenable;
-import kevin.event.PacketEvent;
+import kevin.event.*;
 import kevin.module.modules.movement.Sprint;
 import kevin.module.modules.player.FastUse;
 import net.minecraft.client.entity.EntityPlayerSP;
@@ -130,7 +128,7 @@ public final class RotationUtils extends Mc implements Listenable {
         );
 
         if (silent)
-            setTargetRotation(rotation);
+            setTargetRotation(rotation,0);
         else
             limitAngleChange(new Rotation(player.rotationYaw, player.rotationPitch), rotation, 10 +
                     new Random().nextInt(6)).toPlayer(getMc().player);
@@ -268,9 +266,21 @@ public final class RotationUtils extends Mc implements Listenable {
         targetRotation = rotation;
         RotationUtils.keepLength = keepLength;
     }
+    public static void setTargetRotationWithUnit(final Rotation rotation, final int keepLength, Runnable unit) {
+        if (Double.isNaN(rotation.getYaw()) || Double.isNaN(rotation.getPitch())
+                || rotation.getPitch() > 90 || rotation.getPitch() < -90)
+            return;
 
-    public static void setTargetRotation(final Rotation rotation) {
-        setTargetRotation(rotation, 0);
+        if (Sprint.INSTANCE.getRotationCheck().get()) {
+            Sprint.INSTANCE.setSprintTick(0);
+            Sprint.INSTANCE.setCanSprint(false);
+        }
+
+        rotation.fixedSensitivity(getMc().gameSettings.mouseSensitivity);
+        targetRotation = rotation;
+        RotationUtils.keepLength = keepLength;
+
+        unit.run();
     }
 
     public static void reset() {
@@ -295,6 +305,25 @@ public final class RotationUtils extends Mc implements Listenable {
                 serverRotation = new Rotation(packetPlayer.yaw, packetPlayer.pitch);
             }
         }
+    }
+
+    @EventTarget
+    public void onStrafe(final StrafeEvent event) {
+        if (targetRotation != null) {
+            targetRotation.applyStrafeToPlayer(event);
+            event.cancelEvent();
+        }
+    }
+
+    @EventTarget
+    public void onTick(final TickEvent event) {
+        if (RotationUtils.targetRotation != null) {
+            RotationUtils.keepLength--;
+            if (RotationUtils.keepLength <= 0) RotationUtils.reset();
+        }
+        if (RotationUtils.random.nextGaussian() > 0.8) RotationUtils.x = Math.random();
+        if (RotationUtils.random.nextGaussian() > 0.8) RotationUtils.y = Math.random();
+        if (RotationUtils.random.nextGaussian() > 0.8) RotationUtils.z = Math.random();
     }
 
     @Override

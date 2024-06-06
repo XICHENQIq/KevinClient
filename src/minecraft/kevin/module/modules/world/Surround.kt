@@ -106,7 +106,7 @@ class Surround : Module("Surround", "Surrounds you with obsidian to take less da
                 if (!mc.world.getBlockState(p).material.isReplaceable){
                     switchHotbar(obsidianSlot.hotbarSlot) {
                         val facing = b.second
-                        if (rotation.get()) RotationUtils.setTargetRotation(RotationUtils.faceBlock(p).rotation)
+                        if (rotation.get()) RotationUtils.setTargetRotation(RotationUtils.faceBlock(p).rotation,0)
                         val dirVec = Vec3d(facing.directionVec)
                         val posVec = Vec3d(blockPos).addVector(0.5, 0.5, 0.5)
                         val hitVec = posVec.add(Vec3d(dirVec.x * 0.5, dirVec.y * 0.5, dirVec.z * 0.5))

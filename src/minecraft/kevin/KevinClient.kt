@@ -77,6 +77,9 @@ object KevinClient {
 
         title()
 
+
+        EventManager.registerListener(RotationUtils())
+
         userManager = UserManager()
         socketManager = SocketManager()
         Minecraft.LOGGER.info("$logPrefix Starting...")

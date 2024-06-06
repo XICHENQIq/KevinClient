@@ -56,13 +56,14 @@ class ProjectilesAura : Module(name = "ProjectilesAura", description = "投掷�
                 if (mc.player.inventory.currentItem != targetSlot) {
                     mc.connection!!.networkManager.sendPacket(CPacketHeldItemChange(targetSlot))
                 }
-                RotationUtils.setTargetRotation(rotation)
-                PacketUtils.sendPacketNoEvent(CPacketPlayerTryUseItem(EnumHand.MAIN_HAND))
-                if (mc.player.inventory.currentItem != targetSlot) {
-                    mc.connection!!.networkManager.sendPacket(CPacketHeldItemChange(mc.player.inventory.currentItem))
-                }
+                RotationUtils.setTargetRotationWithUnit(rotation,0) {
+                    PacketUtils.sendPacketNoEvent(CPacketPlayerTryUseItem(EnumHand.MAIN_HAND))
+                    if (mc.player.inventory.currentItem != targetSlot) {
+                        mc.connection!!.networkManager.sendPacket(CPacketHeldItemChange(mc.player.inventory.currentItem))
+                    }
 
-                msTimer.reset()
+                    msTimer.reset()
+                }
             }
         }
     }

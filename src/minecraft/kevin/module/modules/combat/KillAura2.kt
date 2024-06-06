@@ -93,7 +93,7 @@ class KillAura2 : Module(name = "KillAura2", description = "攻击周围实体",
             RotationUtils.toRotation(RotationUtils.getCenter(entity.entityBoundingBox), true),
             180f
         )
-        RotationUtils.setTargetRotation(rotation)
+        RotationUtils.setTargetRotation(rotation,0)
         attackEntity(entity)
     }
     @EventTarget
@@ -141,14 +141,6 @@ class KillAura2 : Module(name = "KillAura2", description = "攻击周围实体",
         }
     }
 
-    @EventTarget
-    fun onStrafe(event: StrafeEvent) {
-
-        if (RotationUtils.targetRotation != null) {
-            RotationUtils.targetRotation.applyStrafeToPlayer(event)
-            event.cancelEvent()
-        }
-    }
 
     private fun updateTargets() {
         for (entity in mc.world.loadedEntityList) {

@@ -135,7 +135,7 @@ class Breaker : Module("Breaker",description = "Destroys selected blocks around 
 
         // Face block
         if (rotationsValue.get())
-            RotationUtils.setTargetRotation(rotations.rotation)
+            RotationUtils.setTargetRotation(rotations.rotation,0)
 
         when {
             // Destory block

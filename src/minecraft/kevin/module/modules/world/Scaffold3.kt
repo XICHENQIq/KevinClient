@@ -142,13 +142,8 @@ class Scaffold3 : Module("Scaffold3", description = "sca", category = ModuleCate
     @EventTarget
     fun onStrafe(event: StrafeEvent) {
         if (lastRotation != Rotation(0f, 0f) && keepRotation.get() && !mc.player.onGround) {
-            RotationUtils.setTargetRotation(lastRotation)
+            RotationUtils.setTargetRotation(lastRotation,0)
         }
-
-        RotationUtils.targetRotation.applyStrafeToPlayer(event)
-        event.cancelEvent()
-        return
-
     }
 
     @EventTarget

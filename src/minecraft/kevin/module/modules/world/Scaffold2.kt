@@ -447,23 +447,8 @@ class Scaffold2 : Module(name = "Scaffold2",
 
     @EventTarget
     fun onStrafe(event: StrafeEvent) {
-        if (!strafeMode.get().equals("AAC", true)) {
-            RotationUtils.targetRotation.applyStrafeToPlayer(event)
-            event.cancelEvent()
-            return
-        }
 
-        if(onPreUpdateMode.get()) {
-            if(RotationUtils.targetRotation != null) {
-                if (!strafeTest.get()) {
-                    val rotation = RotationUtils.targetRotation
-                    rotation.applyStrafeToPlayer(event)
-                    event.cancelEvent()
-                }
-            }
-            return
-        }
-            update()
+        update()
 
 
         val rotation = lockRotation ?: return
@@ -475,20 +460,8 @@ class Scaffold2 : Module(name = "Scaffold2",
             setRotation(rotation)
             lockRotationTimer.update()
 
-
-            if(!test.get()) {
-                rotation.applyStrafeToPlayer(event)
-                event.cancelEvent()
-            }
             return
 
-        }
-        val targetRotation = RotationUtils.targetRotation ?: return
-        if(!searchMode.get().equals("Safe",true)) {
-            if(!test.get()) {
-                targetRotation.applyStrafeToPlayer(event)
-                event.cancelEvent()
-            }
         }
 
     }

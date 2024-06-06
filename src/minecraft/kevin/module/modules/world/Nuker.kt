@@ -125,7 +125,7 @@ class Nuker : Module("Nuker", "Breaks all blocks around you.", category = Module
                 // Change head rotations to next block
                 if (rotationsValue.get()) {
                     val rotation = RotationUtils.faceBlock(blockPos) ?: return // In case of a mistake. Prevent flag.
-                    RotationUtils.setTargetRotation(rotation.rotation)
+                    RotationUtils.setTargetRotation(rotation.rotation,0)
                 }
 
                 // Set next target block

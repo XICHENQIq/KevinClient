@@ -68,7 +68,7 @@ class BugBreak : Module("BugBreak","Break block with packets", category = Module
 
         when (event.eventState) {
             EventState.PRE -> if (rotationsValue.get())
-                    RotationUtils.setTargetRotation((RotationUtils.faceBlock(pos) ?: return).rotation)
+                    RotationUtils.setTargetRotation((RotationUtils.faceBlock(pos) ?: return).rotation,0)
 
 
             EventState.POST -> {
