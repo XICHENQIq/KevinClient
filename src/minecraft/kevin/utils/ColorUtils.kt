@@ -92,17 +92,7 @@ object ColorUtils {
         val customColor = blendColors(fractions, colors, progress)!!.brighter()
         return customColor.rgb
     }
-    fun getHealthColor2(health: Float, maxHealth: Float): Color {
-        var health = health
-        if (health > 20) {
-            health = 20f
-        }
-        val fractions = floatArrayOf(0f, 0.5f, 1f)
-        val colors = arrayOf(Color.RED, Color.YELLOW, Color.GREEN)
-        val progress = health * 5 * 0.01f
-        val customColor = blendColors(fractions, colors, progress)!!.brighter()
-        return customColor
-    }
+
     fun blendColors(fractions: FloatArray, colors: Array<Color?>, progress: Float): Color {
         if (fractions.size == colors.size) {
             val indices: IntArray = getFractionIndices(fractions, progress)
@@ -117,6 +107,7 @@ object ColorUtils {
             throw IllegalArgumentException("Fractions and colours must have equal number of elements")
         }
     }
+
     fun getFractionIndices(fractions: FloatArray, progress: Float): IntArray {
         val range = IntArray(2)
 
@@ -169,7 +160,17 @@ object ColorUtils {
 
         return color3!!
     }
-
+    fun getHealthColor2(health: Float, maxHealth: Float): Color {
+        var health = health
+        if (health > 20) {
+            health = 20f
+        }
+        val fractions = floatArrayOf(0f, 0.5f, 1f)
+        val colors = arrayOf(Color.RED, Color.YELLOW, Color.GREEN)
+        val progress = health * 5 * 0.01f
+        val customColor = blendColors(fractions, colors, progress)!!.brighter()
+        return customColor
+    }
     @JvmStatic
     fun healthColor(hp: Float,maxHP: Float, alpha: Int=255):Color{
         val pct=((hp/maxHP)*255F).toInt()

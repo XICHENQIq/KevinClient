@@ -1,7 +1,6 @@
 package kevin.module.modules.combat
 
 import com.viaversion.viaversion.api.type.types.minecraft.ItemType
-import javafx.scene.effect.MotionBlur
 import kevin.KevinClient
 import kevin.event.*
 import kevin.module.*

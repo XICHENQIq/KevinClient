@@ -77,6 +77,12 @@
     },
     "done": true
   },
+  "minecraft:recipes/building_blocks/snow": {
+    "criteria": {
+      "has_snowball": "2024-06-06 14:58:48 +0800"
+    },
+    "done": true
+  },
   "minecraft:recipes/decorations/white_bed": {
     "criteria": {
       "has_white_wool": "2024-03-23 18:13:44 +0800"
@@ -115,8 +121,10 @@
   },
   "minecraft:adventure/adventuring_time": {
     "criteria": {
+      "forest": "2024-06-06 14:59:00 +0800",
       "extreme_hills_with_trees": "2024-03-23 18:13:45 +0800",
       "plains": "2024-04-04 13:36:51 +0800",
+      "taiga": "2024-06-06 14:58:55 +0800",
       "extreme_hills": "2024-03-23 18:13:52 +0800"
     },
     "done": false
@@ -256,6 +264,12 @@
   "minecraft:recipes/decorations/sign": {
     "criteria": {
       "has_planks": "2024-03-23 18:13:44 +0800"
+    },
+    "done": true
+  },
+  "minecraft:recipes/decorations/snow_layer": {
+    "criteria": {
+      "has_snowball": "2024-06-06 14:58:48 +0800"
     },
     "done": true
   },

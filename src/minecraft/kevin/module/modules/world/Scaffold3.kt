@@ -259,7 +259,7 @@ class Scaffold3 : Module("Scaffold3", description = "sca", category = ModuleCate
         if (farSearch.get()) {
             pos = BlockPos(vec3.x, vec3.y, vec3.z)
         } else {
-            val player = mc.player ?: return
+            val player = mc.player
 
             val posx = player.posX
             val posz = player.posZ
@@ -298,14 +298,10 @@ class Scaffold3 : Module("Scaffold3", description = "sca", category = ModuleCate
                         val distanceSqPosVec: Double = eyesPos.squareDistanceTo(posVec)
 
                         if (eyesPos.distanceTo(hitVec) > 4.5 || distanceSqPosVec > eyesPos.squareDistanceTo(
-                                        posVec.add(dirVec)
-                                ) || world.rayTraceBlocks(
-                                        eyesPos,
-                                        hitVec,
-                                        false,
-                                        true,
-                                        false
-                                ) != null
+                                posVec.add(dirVec)
+                            ) || world.rayTraceBlocks(
+                                eyesPos, hitVec, false, true, false
+                            ) != null
                         ) {
                             zSearch += 0.01
                             continue

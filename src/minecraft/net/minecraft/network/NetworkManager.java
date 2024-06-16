@@ -190,7 +190,6 @@ public class NetworkManager extends SimpleChannelInboundHandler < Packet<? >>
     {
 
 
-
         if (PacketUtils.needReceiveEvent(packetIn)) {
             final PacketEvent event = new PacketEvent(packetIn);
             EventManager.INSTANCE.callEvent(event);

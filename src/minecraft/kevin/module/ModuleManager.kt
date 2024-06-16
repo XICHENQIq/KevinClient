@@ -206,7 +206,6 @@ class ModuleManager : Listenable {
         registerModule(HideAndSeekHack)
         registerModule(TargetStrafe)
         registerModule(Crosshair)
-        registerModule(Renderer)
         registerModule(LightningDetector)
         registerModule(World)
         registerModule(HoleESP)

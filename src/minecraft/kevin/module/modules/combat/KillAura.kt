@@ -214,6 +214,11 @@ class KillAura : Module("KillAura","Automatically attacks targets around you.", 
         }
     }
 
+    @EventTarget
+    fun onStrafe(event: StrafeEvent) {
+        update()
+    }
+
     fun update() {
         if (cancelRun || (noInventoryAttackValue.get() && ((mc.currentScreen)is GuiContainer ||
                     System.currentTimeMillis() - containerOpen < noInventoryDelayValue.get())))

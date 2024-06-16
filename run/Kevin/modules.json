@@ -1017,7 +1017,7 @@
     "MaxTurnSpeed": 180.0,
     "MinTurnSpeed": 180.0,
     "SilentRotation": true,
-    "Strafe": "Strict",
+    "Strafe": "Silent",
     "RandomCenter": true,
     "Outborder": false,
     "FOV": 180.0,
@@ -1327,8 +1327,8 @@
     "KeyBind": 0,
     "Hide": false,
     "AutoDisable": "Disable",
-    "Range": 8.8,
-    "HurtTime": 0
+    "Range": 9.0,
+    "HurtTime": 4
   },
   "Reach": {
     "State": false,
@@ -1349,15 +1349,6 @@
     "Speed": 100,
     "NoAir": false,
     "PotionEffect": false
-  },
-  "Renderer": {
-    "State": false,
-    "KeyBind": 0,
-    "Hide": false,
-    "AutoDisable": "Disable",
-    "NoArmor": false,
-    "NoArm": false,
-    "PlayerModel": "Snow_Fox"
   },
   "ResourcePackSpoof": {
     "State": false,
@@ -1504,7 +1495,7 @@
     "GhostBlock": false,
     "Tower": false,
     "KeepRotation": true,
-    "PlaceTick": 1,
+    "PlaceTick": 0,
     "Mark": true
   },
   "ServerCrasher": {

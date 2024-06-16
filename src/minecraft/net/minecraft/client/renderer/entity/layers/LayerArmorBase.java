@@ -4,7 +4,6 @@ import com.google.common.collect.Maps;
 import java.util.Map;
 
 import kevin.KevinClient;
-import kevin.module.modules.render.Renderer;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.model.ModelBase;
 import net.minecraft.client.renderer.GlStateManager;
@@ -116,8 +115,6 @@ public abstract class LayerArmorBase<T extends ModelBase> implements LayerRender
                     return;
                 }
 
-                Renderer renderer =(Renderer) KevinClient.moduleManager.getModule("Renderer");
-                if (renderer.getState()) this.alpha = renderer.getNoArmor().get() ? 0F : 1F;
 
                 switch (itemarmor.getArmorMaterial())
                 {

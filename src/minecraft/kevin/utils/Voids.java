@@ -49,10 +49,10 @@ public class Voids {
 
     public static Vec3d getPlacePossibility(double offsetX, double offsetY, double offsetZ) {
         final List<Vec3d> possibilities = new ArrayList<>();
-        final int range = (int) (5 + (Math.abs(offsetX) + Math.abs(offsetZ)));
+        final int range = (int) (4 + (Math.abs(offsetX) + Math.abs(offsetZ)));
 
         for (int x = -range; x <= range; ++x) {
-            for (int y = -range; y <= range; ++y) {
+            for (int y = -range; y <= 0; ++y) {
                 for (int z = -range; z <= range; ++z) {
                     final Block block = mc.world.getBlockState(new BlockPos(mc.player).add(x, y, z)).getBlock();
                     if (!(block instanceof BlockAir)) {

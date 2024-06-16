@@ -6,7 +6,6 @@ import java.util.Objects;
 
 import kevin.KevinClient;
 import kevin.module.modules.render.AntiBlind;
-import kevin.module.modules.render.Renderer;
 import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
 import net.minecraft.block.state.IBlockState;
@@ -146,8 +145,6 @@ public class ItemRenderer {
     private void renderArm(EnumHandSide p_187455_1_) {
         this.mc.getTextureManager().bindTexture(this.mc.player.getLocationSkin());
         Render<AbstractClientPlayer> render = this.renderManager.<AbstractClientPlayer>getEntityRenderObject(this.mc.player);
-        if ((Renderer.INSTANCE.getFox() || Renderer.INSTANCE.getRenderer() != null) && Renderer.INSTANCE.getState())
-            return;
         RenderPlayer renderplayer = (RenderPlayer) render;
         GlStateManager.pushMatrix();
         float f = p_187455_1_ == EnumHandSide.RIGHT ? 1.0F : -1.0F;
@@ -250,7 +247,6 @@ public class ItemRenderer {
         GlStateManager.rotate(200.0F, 1.0F, 0.0F, 0.0F);
         GlStateManager.rotate(f * -135.0F, 0.0F, 1.0F, 0.0F);
         GlStateManager.translate(f * 5.6F, 0.0F, 0.0F);
-        if (Renderer.INSTANCE.getNoArm().get()) return;
         RenderPlayer renderplayer = (RenderPlayer) this.renderManager.getPlayerRender(abstractclientplayer);
         GlStateManager.disableCull();
 

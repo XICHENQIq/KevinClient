@@ -15,7 +15,6 @@ import kevin.hud.HUD.Companion.createDefault
 import kevin.milk.guis.clickgui.MilkClickGui
 import kevin.module.ModuleManager
 import kevin.module.modules.render.ClickGui
-import kevin.module.modules.render.Renderer
 import kevin.script.ScriptManager
 import kevin.skin.SkinManager
 import kevin.utils.*
@@ -89,7 +88,6 @@ object KevinClient {
         Minecraft.LOGGER.info("$logPrefix FileManager loaded,starting ViaVersion...")
         ViaVersion.start()
         Minecraft.LOGGER.info("$logPrefix ViaVersion started,loading Renderer...")
-        Renderer.load()
         Minecraft.LOGGER.info("$logPrefix Renderer loaded,loading CommandManager...")
         commandManager = CommandManager()
         Minecraft.LOGGER.info("$logPrefix CommandManager loaded,loading ModuleManager...")

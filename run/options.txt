@@ -9,7 +9,7 @@ guiScale:2
 particles:0
 bobView:false
 anaglyph3d:false
-maxFps:165
+maxFps:260
 fboEnable:true
 difficulty:1
 fancyGraphics:true
@@ -18,7 +18,7 @@ renderClouds:false
 resourcePacks:[]
 incompatibleResourcePacks:[]
 lastServer:
-lang:zh_cn
+lang:en_us
 chatVisibility:0
 chatColors:true
 chatLinks:true
