@@ -95,8 +95,7 @@ open class HUD : Mc()  {
 
         if (button == 0) {
             for (element in elements.reversed()) {
-                if (!element.isInBorder((mouseX / element.scale) - element.renderX,
-                        (mouseY / element.scale) - element.renderY))
+                if (!element.isInBorder((mouseX / element.scale) - element.renderX, (mouseY / element.scale) - element.renderY))
                     continue
 
                 element.drag = true

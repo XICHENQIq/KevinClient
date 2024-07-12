@@ -409,7 +409,7 @@
     "Suffix": " | \u003cKevinClient\u003e-V1.0"
   },
   "ChestAura": {
-    "State": true,
+    "State": false,
     "KeyBind": 0,
     "Hide": false,
     "AutoDisable": "Disable",
@@ -635,7 +635,7 @@
     "Strafe": false,
     "StrafeStrength": 8.0,
     "Speed": true,
-    "SpeedStrength": 4.56,
+    "SpeedStrength": 0.33,
     "OnlyCountOne": true
   },
   "ExtraESP": {
@@ -1651,7 +1651,7 @@
     "Full": false
   },
   "SwPhase": {
-    "State": true,
+    "State": false,
     "KeyBind": 0,
     "Hide": false,
     "AutoDisable": "Disable"

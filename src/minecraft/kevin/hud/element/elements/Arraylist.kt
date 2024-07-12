@@ -153,7 +153,7 @@ class Arraylist(x: Double = 1.0, y: Double = 2.0, scale: Float = 1F, side: Side 
                         backgroundCustomColor
                     )
                 }
-                RenderUtils.drawRect(-3F, module.higt, 1F, module.higt + textHeight, customColor)
+                //RenderUtils.drawRect(-3F, module.higt, 1F, module.higt + textHeight, customColor)
 
             }
             val textColor = when (colorModeValue.get().toLowerCase()) {

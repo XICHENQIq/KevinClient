@@ -128,6 +128,7 @@ public final class RenderUtils extends Mc{
             glVertex2d(x1 + Math.sin(i * degree) * radius, y1 + Math.cos(i * degree) * radius);
         for (double i = 270; i <= 360; i += 1)
             glVertex2d(x1 + Math.sin(i * degree) * radius, y2 + Math.cos(i * degree) * radius);
+
         glEnd();
 
         glEnable(GL_TEXTURE_2D);

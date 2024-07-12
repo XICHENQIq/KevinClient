@@ -263,14 +263,13 @@ class Scaffold3 : Module("Scaffold3", description = "sca", category = ModuleCate
 
             val posx = player.posX
             val posz = player.posZ
-            val blockPosition =
-                    if (!mc.gameSettings.keyBindJump.pressed) {
-                        BlockPos(posx, playerIntY - 1.0, posz)
-                    } else (if (player.posY == player.posY.roundToInt() + 0.5) {
-                        BlockPos(player)
-                    } else {
-                        BlockPos(posx, player.posY, posz).down()
-                    })
+            val blockPosition = if (!mc.gameSettings.keyBindJump.pressed) {
+                BlockPos(posx, playerIntY - 1.0, posz)
+            } else (if (player.posY == player.posY.roundToInt() + 0.5) {
+                BlockPos(player)
+            } else {
+                BlockPos(posx, player.posY, posz).down()
+            })
 
             pos = blockPosition
         }
